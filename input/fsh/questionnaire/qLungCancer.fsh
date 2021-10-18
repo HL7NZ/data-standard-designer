@@ -48,7 +48,7 @@ Description: "Questionnaire for Lung Cancer histology request"
 * item[=].item[=].answerOption[+].valueCoding  = $ss-cs#current "ex" 
 * item[=].item[=].answerOption[+].valueCoding  = $ss-cs#current "never" 
 
-* item[=].item[+].linkId = "absestos"
+* item[=].item[+].linkId = "asbestos"
 * item[=].item[=].text = "Asbestos exposure"
 * item[=].item[=].type = #boolean
 
@@ -110,11 +110,21 @@ Description: "Example of questionnaire response"
 * status = #completed
 * questionnaire = "http://clinfhir.com/Questionnaire/lungcancer"
 
-* item[+].linkId = "nhi"
-* item[=].answer[+].valueString = "zzz9999"
 
-* item[+].linkId = "cpn"
-* item[=].answer[+].valueString = "x12"
+* item[+].linkId = "patinfo"
+
+* item[=].item[+].linkId = "nhi"
+* item[=].item[=].answer[+].valueString = "zzz9999"
+
+
+* item[+].linkId = "clinicianinfo"
+
+* item[=].item[+].linkId = "cpn"
+* item[=].item[=].answer[+].valueString = "x12"
+
+
+
+
 
 * item[+].linkId = "ss"
 * item[=].answer[+].valueCoding = $ss-cs#current
