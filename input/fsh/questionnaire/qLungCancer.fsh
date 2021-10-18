@@ -1,7 +1,8 @@
 Instance: QLungCancer
 InstanceOf: Questionnaire
-Description: "Questionnaire for Lun Cancer histology request"
+Description: "Questionnaire for Lung Cancer histology request"
 
+* url = "http://clinfhir.com/Questionnaire/lungcancer"
 * status = #draft
 * name = "LungCancerHistologyRequest"
 * title = "A form to capture data to accompany a histology request for lung cancer"
@@ -76,3 +77,36 @@ Description: "Questionnaire for Lun Cancer histology request"
 * item[=].item[=].answerOption[+].valueCoding = $resection-cs#lobectomy "lobectomy"
 * item[=].item[=].answerOption[+].valueCoding = $resection-cs#pneumonectomy "pneumonectomy"
 * item[=].item[=].answerOption[+].valueCoding = $resection-cs#other "Other"
+
+
+Instance: QLungCancerResponse
+InstanceOf: QuestionnaireResponse
+Description: "Example of questionnaire response"
+
+* status = #completed
+* questionnaire = "http://clinfhir.com/Questionnaire/lungcancer"
+
+* item[+].linkId = "nhi"
+* item[=].answer[+].valueString = "zzz9999"
+
+* item[+].linkId = "cpn"
+* item[=].answer[+].valueString = "x12"
+
+* item[+].linkId = "ss"
+* item[=].answer[+].valueCoding = $ss-cs#current
+
+* item[+].linkId = "asbestos"
+* item[=].answer[+].valueBoolean = false
+
+* item[+].linkId = "previousCx"
+* item[=].answer[+].valueString = "None known"
+
+* item[+].linkId = "previousCancer"
+* item[=].answer[+].valueString = "Malignant melanoma left arm in 1997"
+
+* item[+].linkId = "site"
+* item[=].answer[+].valueCoding = $site-cs#rul
+
+* item[+].linkId = "resection"
+* item[=].answer[+].valueCoding = $resection-cs#wedge
+
