@@ -1,3 +1,4 @@
-# structuredPath
+Structured Pathology IG
 
-Feel free to modify this index page with your own awesome content!
+This IG describes how to represent information in a pathology request
+for a lung cancer biopsy specimen in a structured fashion.
