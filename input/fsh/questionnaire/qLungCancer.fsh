@@ -6,6 +6,8 @@ Description: "Questionnaire for Lung Cancer histology request"
 * status = #draft
 * name = "LungCancerHistologyRequest"
 * title = "A form to capture data to accompany a histology request for lung cancer"
+* useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#focus
+* useContext.valueCodeableConcept = http://clinfhir.com#structuredPath
 
 //--------- patient information 
 * item[+].linkId = "patinfo"
@@ -14,6 +16,14 @@ Description: "Questionnaire for Lung Cancer histology request"
 
 * item[=].item[+].linkId = "nhi"
 * item[=].item[=].text = "NHI"
+* item[=].item[=].type = #string
+
+* item[=].item[+].linkId = "fname"
+* item[=].item[=].text = "First Name"
+* item[=].item[=].type = #string
+
+* item[=].item[+].linkId = "lname"
+* item[=].item[=].text = "Last Name"
 * item[=].item[=].type = #string
 
 //-----  clinician information
@@ -77,6 +87,20 @@ Description: "Questionnaire for Lung Cancer histology request"
 * item[=].item[=].answerOption[+].valueCoding = $resection-cs#lobectomy "lobectomy"
 * item[=].item[=].answerOption[+].valueCoding = $resection-cs#pneumonectomy "pneumonectomy"
 * item[=].item[=].answerOption[+].valueCoding = $resection-cs#other "Other"
+
+
+//--------- specimen
+* item[+].linkId = "specimen"
+* item[=].text = "Specimen Information"
+* item[=].type = #group
+
+* item[=].item[+].linkId = "specLabel"
+* item[=].item[=].text = "Specimen Label"
+* item[=].item[=].type = #string
+
+* item[=].item[+].linkId = "specReturn"
+* item[=].item[=].text = "Patient requests specimen return"
+* item[=].item[=].type = #boolean
 
 
 Instance: QLungCancerResponse
