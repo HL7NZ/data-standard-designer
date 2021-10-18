@@ -1,6 +1,6 @@
 Instance: QLungCancer
 InstanceOf: Questionnaire
-Description: "An example of a patient with a license to krill."
+Description: "Questionnaire for Lun Cancer histology request"
 
 * status = #draft
 * name = "LungCancerHistologyRequest"
