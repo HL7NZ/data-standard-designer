@@ -117,30 +117,32 @@ Description: "Example of questionnaire response"
 * item[=].item[=].answer[+].valueString = "zzz9999"
 
 
+
 * item[+].linkId = "clinicianinfo"
 
 * item[=].item[+].linkId = "cpn"
 * item[=].item[=].answer[+].valueString = "x12"
 
 
+* item[+].linkId = "clinicalinfo"
+
+* item[=].item[+].linkId = "ss"
+* item[=].item[=].answer[+].valueCoding = $ss-cs#current
 
 
 
-* item[+].linkId = "ss"
-* item[=].answer[+].valueCoding = $ss-cs#current
+* item[=].item[+].linkId = "asbestos"
+* item[=].item[=].answer[+].valueBoolean = false
 
-* item[+].linkId = "asbestos"
-* item[=].answer[+].valueBoolean = false
+* item[=].item[+].linkId = "previousCx"
+* item[=].item[=].answer[+].valueString = "None known"
 
-* item[+].linkId = "previousCx"
-* item[=].answer[+].valueString = "None known"
+* item[=].item[+].linkId = "previousCancer"
+* item[=].item[=].answer[+].valueString = "Malignant melanoma left arm in 1997"
 
-* item[+].linkId = "previousCancer"
-* item[=].answer[+].valueString = "Malignant melanoma left arm in 1997"
+* item[=].item[+].linkId = "site"
+* item[=].item[=].answer[+].valueCoding = $site-cs#rul
 
-* item[+].linkId = "site"
-* item[=].answer[+].valueCoding = $site-cs#rul
-
-* item[+].linkId = "resection"
-* item[=].answer[+].valueCoding = $resection-cs#wedge
+* item[=].item[+].linkId = "resection"
+* item[=].item[=].answer[+].valueCoding = $resection-cs#wedge
 
