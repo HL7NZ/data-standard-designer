@@ -19,4 +19,5 @@ publisher:
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 menu:
   Home: index.html
+  Design: design.html
   Artifacts: artifacts.html
