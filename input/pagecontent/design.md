@@ -66,7 +66,7 @@ The following is the workflow that is used to facilitate the interaction between
 3. The Form Filler then:
    1. Creates a transaction bundle and adds the Patient & Practitioner resources to it. 
    2. The Organization or Practitioner representing the pathologist practice is added. 
-   3. Generates the QR with appropriate references and adds that to the bundle
+   3. Generates the QR with appropriate references and adds that to the bundle. The structure of the QR needs to match that of the Q - ie the item indenting must be the same.
    4. Generates a ServiceRequest resource (that represents the act of making the request) and adds that to the bundle
    5. Generates a Task resource (status = 'requested') and adds that to the bundle. This is an optional step, but will greatly facilitate the workflow.
    6. POSTs the transaction bundle to the server.

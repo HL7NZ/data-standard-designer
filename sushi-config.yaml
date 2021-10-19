@@ -20,4 +20,5 @@ publisher:
 menu:
   Home: index.html
   Design: design.html
+  Logical Models: logicalmodel.html
   Artifacts: artifacts.html
