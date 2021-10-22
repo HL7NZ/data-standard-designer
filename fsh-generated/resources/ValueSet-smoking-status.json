@@ -1,0 +1,16 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "AliasTypeSmokingStatus",
+  "id": "smoking-status",
+  "title": "Smoking Status",
+  "version": "0.1.0",
+  "url": "http://clinfhir.com/ValueSet/ss",
+  "compose": {
+    "include": [
+      {
+        "system": "http://clinfhir.com/CodeSystem/ss"
+      }
+    ]
+  }
+}

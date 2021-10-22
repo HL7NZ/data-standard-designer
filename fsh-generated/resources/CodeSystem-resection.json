@@ -1,0 +1,37 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "active",
+  "content": "complete",
+  "name": "Resection",
+  "id": "resection",
+  "title": "Nature of the resection",
+  "version": "0.1.0",
+  "url": "http://clinfhir.com/CodeSystem/resection",
+  "concept": [
+    {
+      "code": "wedge",
+      "display": "wedge"
+    },
+    {
+      "code": "segmentectomy",
+      "display": "segmentectomy"
+    },
+    {
+      "code": "bilobectomy",
+      "display": "bilobectomy"
+    },
+    {
+      "code": "lobectomy",
+      "display": "lobectomy"
+    },
+    {
+      "code": "pneumonectomy",
+      "display": "pneumonectomy"
+    },
+    {
+      "code": "other",
+      "display": "Other"
+    }
+  ],
+  "count": 6
+}

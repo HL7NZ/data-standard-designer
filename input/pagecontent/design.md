@@ -55,7 +55,9 @@ In the reference implementation for this IG, the architecture consists of 3 main
 
 ### Workflow
 
-The following is the workflow that is used to facilitate the interaction between the requesting clinician and the pathologist. It is assumed that the Q has been designed and uploaded to the Forms Manager
+The following is the workflow that is used to facilitate the interaction between the requesting clinician and the pathologist. It is assumed that the Q has been designed and uploaded to the Forms Manager.
+
+There are more details in the [Use Cases](usecases.html) page.
 
 1. The clinician uses the Form Filler App, which downloads the Q from the Form Manager and generates the UI. If the UI has been manually created by the app developer, then the Q is not needed - although the Form Filler will still need the url of the Q, as it needs to be added to the QR. In this situation, versioning will need to be considered carefully as the Q and the UI presented by the form filler should match.
 

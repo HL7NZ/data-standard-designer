@@ -1,0 +1,72 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "QTest",
+  "url": "http://clinfhir.com/Questionnaire/test",
+  "status": "draft",
+  "name": "TestForm",
+  "title": "A form to capture data to accompany a histology request for lung cancer",
+  "useContext": [
+    {
+      "code": {
+        "code": "focus",
+        "system": "http://terminology.hl7.org/CodeSystem/usage-context-type"
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "structuredPath",
+            "system": "http://clinfhir.com"
+          }
+        ]
+      }
+    }
+  ],
+  "item": [
+    {
+      "linkId": "patinfo",
+      "text": "Patient Information",
+      "type": "group",
+      "extension": [
+        {
+          "url": "http://clinfhir.com/structureDefinition/q-item-description",
+          "valueString": "information about the patient"
+        }
+      ],
+      "item": [
+        {
+          "linkId": "nhi",
+          "text": "NHI",
+          "type": "string",
+          "extension": [
+            {
+              "url": "http://clinfhir.com/structureDefinition/q-item-description",
+              "valueString": "The National Health Identifier"
+            }
+          ]
+        },
+        {
+          "linkId": "fname",
+          "text": "First name",
+          "type": "string",
+          "extension": [
+            {
+              "url": "http://clinfhir.com/structureDefinition/q-item-description",
+              "valueString": "The patients first name"
+            }
+          ]
+        },
+        {
+          "linkId": "lname",
+          "text": "Last name",
+          "type": "string",
+          "extension": [
+            {
+              "url": "http://clinfhir.com/structureDefinition/q-item-description",
+              "valueString": "The patients last name"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

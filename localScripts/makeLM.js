@@ -5,8 +5,8 @@
 let fs = require('fs')
 let htmlFile = "../input/pagecontent/logicalmodel.md"
 let rootPath = "../fsh-generated/resources/"
-let server = "home.clinfhir.com" //:8054/baseR4/"
-let http = require('http')
+//let server = "home.clinfhir.com" //:8054/baseR4/"
+//let http = require('http')
 let ar = []
 
 fs.readdirSync(rootPath).forEach(function(fileName) {

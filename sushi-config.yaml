@@ -20,5 +20,7 @@ publisher:
 menu:
   Home: index.html
   Design: design.html
+  Use Cases: usecases.html
   Logical Models: logicalmodel.html
   Artifacts: artifacts.html
+

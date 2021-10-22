@@ -1,0 +1,136 @@
+{
+  "resourceType": "ImplementationGuide",
+  "id": "moh.org.nz.structuredpath",
+  "url": "http://example.org/ImplementationGuide/moh.org.nz.structuredpath",
+  "version": "0.1.0",
+  "name": "structuredPath",
+  "status": "draft",
+  "publisher": "David Hay",
+  "contact": [
+    {
+      "name": "David Hay",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://example.org/example-publisher"
+        }
+      ]
+    }
+  ],
+  "packageId": "moh.org.nz.structuredpath",
+  "fhirVersion": [
+    "4.0.1"
+  ],
+  "definition": {
+    "resource": [
+      {
+        "reference": {
+          "reference": "ValueSet/smoking-status"
+        },
+        "name": "Smoking Status",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/resection"
+        },
+        "name": "Nature of the resection",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/site"
+        },
+        "name": "Site and laterality",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/resection"
+        },
+        "name": "Nature of the resection",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/site"
+        },
+        "name": "Smoking Status",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/smoking-status"
+        },
+        "name": "Smoking Status",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "Questionnaire/QLungCancer"
+        },
+        "name": "QLungCancer",
+        "description": "Questionnaire for Lung Cancer histology request",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "QuestionnaireResponse/QLungCancerResponse"
+        },
+        "name": "QLungCancerResponse",
+        "description": "Example of questionnaire response",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Questionnaire/QTest"
+        },
+        "name": "QTest",
+        "description": "Test Questionnaire",
+        "exampleBoolean": true
+      }
+    ],
+    "page": {
+      "nameUrl": "toc.html",
+      "title": "Table of Contents",
+      "generation": "html",
+      "page": [
+        {
+          "nameUrl": "index.html",
+          "title": "Home",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "design.html",
+          "title": "Design",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "logicalmodel.html",
+          "title": "Logicalmodel",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "usecases.html",
+          "title": "Usecases",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "valuesets.html",
+          "title": "Valuesets",
+          "generation": "markdown"
+        }
+      ]
+    },
+    "parameter": [
+      {
+        "code": "copyrightyear",
+        "value": "2021+"
+      },
+      {
+        "code": "releaselabel",
+        "value": "ci-build"
+      }
+    ]
+  }
+}

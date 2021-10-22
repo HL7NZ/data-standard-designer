@@ -1,0 +1,96 @@
+{
+  "resourceType": "QuestionnaireResponse",
+  "id": "QLungCancerResponse",
+  "status": "completed",
+  "questionnaire": "http://clinfhir.com/Questionnaire/lungcancer",
+  "item": [
+    {
+      "linkId": "patinfo",
+      "item": [
+        {
+          "linkId": "nhi",
+          "answer": [
+            {
+              "valueString": "zzz9999"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "clinicianinfo",
+      "item": [
+        {
+          "linkId": "cpn",
+          "answer": [
+            {
+              "valueString": "x12"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "clinicalinfo",
+      "item": [
+        {
+          "linkId": "ss",
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "current",
+                "system": "http://clinfhir.com/CodeSystem/ss"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "asbestos",
+          "answer": [
+            {
+              "valueBoolean": false
+            }
+          ]
+        },
+        {
+          "linkId": "previousCx",
+          "answer": [
+            {
+              "valueString": "None known"
+            }
+          ]
+        },
+        {
+          "linkId": "previousCancer",
+          "answer": [
+            {
+              "valueString": "Malignant melanoma left arm in 1997"
+            }
+          ]
+        },
+        {
+          "linkId": "site",
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "rul",
+                "system": "http://clinfhir.com/CodeSystem/site"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "resection",
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "wedge",
+                "system": "http://clinfhir.com/CodeSystem/resection"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
