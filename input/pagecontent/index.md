@@ -16,9 +16,14 @@ todo: create capstmt for the needed API
 
 The IG does not (yet) cover the details of the pathology report, beyond describing the use DiagnosticReport and Observations.
 
-### Form 
+### Forms 
 
 Questionnaires currently defined:
 
 * [Lung Cancer](Questionnaire-QLungCancer.html)
 
+### Reference implementation
+
+[clinFHIR form display](http://clinfhir.com/StructuredPathRequest.html)
+
+[Local copy](http://localhost:8081/StructuredPathRequest.html)

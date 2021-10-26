@@ -67,7 +67,7 @@ Description: "Questionnaire for Lung Cancer histology request"
 * item[=].item[+].linkId = "site"
 * item[=].item[=].text = "Site and laterality"
 * item[=].item[=].type = #choice
-//* item[=].item[=].answerValueSet = $site-vs
+//* item[=].item[=].answerValueSet = $site-vs       //can have answerOption or answerValueSet but not both
 
 * item[=].item[=].answerOption[+].valueCoding = $site-cs#rul "Right Upper Lobe" 
 * item[=].item[=].answerOption[+].valueCoding = $site-cs#rml "Right Middle Lobe" 
