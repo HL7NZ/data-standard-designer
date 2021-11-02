@@ -1,0 +1,13 @@
+{
+  "resourceType": "Observation",
+  "id": "exampleSmoker",
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "code": "72166-2",
+        "system": "http://loinc.org"
+      }
+    ]
+  }
+}

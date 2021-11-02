@@ -25,6 +25,64 @@
     "resource": [
       {
         "reference": {
+          "reference": "StructureDefinition/AsbestosObservation"
+        },
+        "name": "AsbestosObservation",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/lcBundle"
+        },
+        "name": "Lung Cancer bundle",
+        "description": "A bundle containing Lung Cancer resources",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/PreviousCancerObservation"
+        },
+        "name": "PreviousCancerObservation",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/PreviousCytologyObservation"
+        },
+        "name": "PreviousCytologyObservation",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/PreviousTxObservation"
+        },
+        "name": "PreviousTxObservation",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/ResectionObservation"
+        },
+        "name": "ResectionObservation",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/SmokerObservation"
+        },
+        "name": "SmokerObservation",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/LungModel"
+        },
+        "name": "Model for Lung cancer data",
+        "description": "Model for Lung cancer data",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "ValueSet/smoking-status"
         },
         "name": "Smoking Status",
@@ -67,26 +125,23 @@
       },
       {
         "reference": {
-          "reference": "Questionnaire/QLungCancer"
+          "reference": "Bundle/exampleBundle"
         },
-        "name": "QLungCancer",
-        "description": "Questionnaire for Lung Cancer histology request",
+        "name": "exampleBundle",
+        "exampleCanonical": "http://example.org/StructureDefinition/lcBundle"
+      },
+      {
+        "reference": {
+          "reference": "Patient/examplePatient"
+        },
+        "name": "examplePatient",
         "exampleBoolean": true
       },
       {
         "reference": {
-          "reference": "QuestionnaireResponse/QLungCancerResponse"
+          "reference": "Observation/exampleSmoker"
         },
-        "name": "QLungCancerResponse",
-        "description": "Example of questionnaire response",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "Questionnaire/QTest"
-        },
-        "name": "QTest",
-        "description": "Test Questionnaire",
+        "name": "exampleSmoker",
         "exampleBoolean": true
       }
     ],
@@ -98,26 +153,6 @@
         {
           "nameUrl": "index.html",
           "title": "Home",
-          "generation": "markdown"
-        },
-        {
-          "nameUrl": "design.html",
-          "title": "Design",
-          "generation": "markdown"
-        },
-        {
-          "nameUrl": "logicalmodel.html",
-          "title": "Logicalmodel",
-          "generation": "markdown"
-        },
-        {
-          "nameUrl": "usecases.html",
-          "title": "Usecases",
-          "generation": "markdown"
-        },
-        {
-          "nameUrl": "valuesets.html",
-          "title": "Valuesets",
           "generation": "markdown"
         }
       ]

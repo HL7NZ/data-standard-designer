@@ -1,0 +1,38 @@
+{
+  "resourceType": "Bundle",
+  "id": "exampleBundle",
+  "meta": {
+    "profile": [
+      "http://example.org/StructureDefinition/lcBundle"
+    ]
+  },
+  "type": "transaction",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "examplePatient",
+        "name": [
+          {
+            "text": "John Doe"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "exampleSmoker",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "code": "72166-2",
+              "system": "http://loinc.org"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
