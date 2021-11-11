@@ -1,0 +1,53 @@
+{
+  "resourceType": "Specimen",
+  "id": "specimen1",
+  "text": {
+    "status": "additional",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Lung biopsy tissue</div>"
+  },
+  "extension": [
+    {
+      "url": "http://example.org/return-specimen",
+      "valueBoolean": true
+    }
+  ],
+  "status": "available",
+  "subject": {
+    "reference": "Patient/examplePatient"
+  },
+  "type": {
+    "coding": [
+      {
+        "code": "TISS",
+        "system": "http://terminology.hl7.org/CodeSystem/v2-0487"
+      }
+    ]
+  },
+  "collection": {
+    "collector": {
+      "reference": "Practitioner/author1"
+    },
+    "bodySite": {
+      "coding": [
+        {
+          "code": "rul",
+          "system": "http://clinfhir.com/CodeSystem/site"
+        }
+      ]
+    },
+    "method": {
+      "coding": [
+        {
+          "code": "129314006",
+          "system": "http://www.snomed.org/",
+          "display": "Biopsy - action"
+        }
+      ]
+    }
+  },
+  "container": [
+    {
+      "description": "Lung tissue"
+    }
+  ]
+}

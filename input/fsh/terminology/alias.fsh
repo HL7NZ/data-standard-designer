@@ -1,4 +1,7 @@
 
+
+Alias: $snomed = http://www.snomed.org/
+
 //Smoking status
 Alias: $ss-vs = http://clinfhir.com/ValueSet/ss
 Alias: $ss-cs = http://clinfhir.com/CodeSystem/ss

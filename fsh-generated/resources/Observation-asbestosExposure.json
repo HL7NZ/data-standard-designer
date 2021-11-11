@@ -1,15 +1,15 @@
 {
   "resourceType": "Observation",
-  "id": "exampleSmoker",
+  "id": "asbestosExposure",
   "text": {
     "status": "additional",
-    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Is a current smoker</div>"
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Has had exposure to asbestos</div>"
   },
   "status": "final",
   "code": {
     "coding": [
       {
-        "code": "72166-2",
+        "code": "unknown",
         "system": "http://loinc.org"
       }
     ]

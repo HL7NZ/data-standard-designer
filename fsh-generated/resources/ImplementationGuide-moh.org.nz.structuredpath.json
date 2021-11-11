@@ -125,10 +125,31 @@
       },
       {
         "reference": {
+          "reference": "Observation/asbestosExposure"
+        },
+        "name": "asbestosExposure",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Practitioner/author1"
+        },
+        "name": "author1",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Procedure/biopsy1"
+        },
+        "name": "biopsy1",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
           "reference": "Bundle/exampleBundle"
         },
         "name": "exampleBundle",
-        "exampleCanonical": "http://example.org/StructureDefinition/lcBundle"
+        "exampleBoolean": true
       },
       {
         "reference": {
@@ -142,6 +163,20 @@
           "reference": "Observation/exampleSmoker"
         },
         "name": "exampleSmoker",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Specimen/specimen1"
+        },
+        "name": "specimen1",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "ServiceRequest/sr1"
+        },
+        "name": "sr1",
         "exampleBoolean": true
       }
     ],

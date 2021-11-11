@@ -1,0 +1,23 @@
+{
+  "resourceType": "Practitioner",
+  "id": "author1",
+  "text": {
+    "status": "additional",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Marcus Welby</div>"
+  },
+  "name": [
+    {
+      "family": "Welby",
+      "given": [
+        "Marcus"
+      ],
+      "text": "Marcus Welby"
+    }
+  ],
+  "identifier": [
+    {
+      "system": "https://standards.digital.health.nz/ns/hpi-person-id",
+      "value": "xxxx"
+    }
+  ]
+}

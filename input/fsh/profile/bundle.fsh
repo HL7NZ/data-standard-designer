@@ -154,26 +154,7 @@ Description:    "A bundle containing Lung Cancer resources"
 
 
 
-//===================== example of bundle =================
-Instance:       examplePatient
-InstanceOf:     Patient
 
-* name.text = "John Doe"
-
-Instance:       exampleSmoker
-InstanceOf:     Observation
-
-* status = #final
-* code = http://loinc.org#72166-2
-
-
-Instance:       exampleBundle
-InstanceOf:     LungCancerBundle
-
-* type = #transaction
-
-* entry[+].resource = examplePatient
-* entry[+].resource = exampleSmoker
 
 
 
