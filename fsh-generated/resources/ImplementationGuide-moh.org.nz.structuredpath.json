@@ -189,6 +189,11 @@
           "nameUrl": "index.html",
           "title": "Home",
           "generation": "markdown"
+        },
+        {
+          "nameUrl": "workingNotes.html",
+          "title": "Working Notes",
+          "generation": "markdown"
         }
       ]
     },
