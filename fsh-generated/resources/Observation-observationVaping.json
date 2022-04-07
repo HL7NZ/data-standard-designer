@@ -1,0 +1,30 @@
+{
+  "resourceType": "Observation",
+  "id": "observationVaping",
+  "text": {
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Vaping status</div>",
+    "status": "generated"
+  },
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "code": "vap",
+        "system": "http://canshare.com/cs",
+        "display": "Vaping Status"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/patientLung"
+  },
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "code": "current",
+        "system": "http://canshare.com/cs",
+        "display": "Current Vaper"
+      }
+    ]
+  }
+}

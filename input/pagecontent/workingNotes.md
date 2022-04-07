@@ -1,5 +1,25 @@
 
 
+### General questions
+
+
+
+#### Previous treatment
+
+how detailed will this be? assume just text (Observation) but could also be MedicationAdministration / Procedure
+
+#### Previous cancer
+
+how detailed will this be? assume just text (Observation) but could also be Condition
+
+#### radiology data
+
+how detailed will this be? assume just text (Observation) 
+
+#### TNM
+
+Is there both clinical and pathological TNM
+
 ### Observation codes
 
 A number of the elements in the Logical Model are represented by Observations, and a specific Observation.code value is needed to identify each one. The following table lists those elements. Note that this table is manually generated, and so may not match the model from time to time
@@ -175,8 +195,6 @@ Like the table above, this one is manually generated.
 
 
 </table>
-
-
 
 
 

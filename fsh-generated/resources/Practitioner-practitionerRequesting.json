@@ -1,0 +1,24 @@
+{
+  "resourceType": "Practitioner",
+  "id": "practitionerRequesting",
+  "text": {
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Reginald requester</div>",
+    "status": "generated"
+  },
+  "name": [
+    {
+      "given": [
+        "Reginald"
+      ],
+      "family": "Requester",
+      "text": "Reginald Requester"
+    }
+  ],
+  "identifier": [
+    {
+      "system": "https://standards.digital.health.nz/ns/hpi-person-id",
+      "value": "ghi"
+    }
+  ],
+  "gender": "male"
+}

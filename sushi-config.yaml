@@ -19,6 +19,8 @@ publisher:
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 menu:
   Home: index.html
+  Extensions: extensions.html
+  Profiles: profiles.html
   Artifacts: artifacts.html
-  Working Notes: workingNotes.html
+ 
 

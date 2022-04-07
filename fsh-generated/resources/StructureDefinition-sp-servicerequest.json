@@ -1,0 +1,198 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "sp-servicerequest",
+  "text": {
+    "status": "additional",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">ServiceRequest</div>"
+  },
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
+      "valueString": "Clinical.Care Provision"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-security-category",
+      "valueCode": "patient"
+    }
+  ],
+  "url": "http://hl7.org.nz/fhir/StructureDefinition/SpServiceRequest",
+  "version": "0.1.0",
+  "name": "SpServiceRequest",
+  "title": "Structured pathology ServiceRequest",
+  "status": "active",
+  "description": "Structured pathology ServiceRequest",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "NZ",
+          "system": "urn:iso:std:iso:3166"
+        }
+      ]
+    }
+  ],
+  "purpose": "Profile on ServiceRequest for Structured Pathology",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "workflow",
+      "uri": "http://hl7.org/fhir/workflow",
+      "name": "Workflow Pattern"
+    },
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2 Mapping"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    },
+    {
+      "identity": "quick",
+      "uri": "http://siframework.org/cqf",
+      "name": "Quality Improvement and Clinical Knowledge (QUICK)"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "ServiceRequest",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/ServiceRequest",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "ServiceRequest.extension",
+        "path": "ServiceRequest.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "ServiceRequest.extension:copy-to",
+        "path": "ServiceRequest.extension",
+        "sliceName": "copy-to",
+        "short": "Copy-to",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://canshare.com/fhir/StructureDefinition/copy-to"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ServiceRequest.extension:approved-by",
+        "path": "ServiceRequest.extension",
+        "sliceName": "approved-by",
+        "short": "The person who approved the request",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://canshare.com/fhir/StructureDefinition/approved-by"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ServiceRequest.extension:completed-by",
+        "path": "ServiceRequest.extension",
+        "sliceName": "completed-by",
+        "short": "The person who completed the request",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://canshare.com/fhir/StructureDefinition/completed-by"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ServiceRequest.extension:copy-to-facility",
+        "path": "ServiceRequest.extension",
+        "sliceName": "copy-to-facility",
+        "short": "The facility that should receive a copy of the report",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://canshare.com/fhir/StructureDefinition/copy-to-facility"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ServiceRequest.extension:principal-clinician",
+        "path": "ServiceRequest.extension",
+        "sliceName": "principal-clinician",
+        "short": "The main clinician caring for the patient",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://canshare.com/fhir/StructureDefinition/principal-clinician"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ServiceRequest.extension:requesting-facility",
+        "path": "ServiceRequest.extension",
+        "sliceName": "requesting-facility",
+        "short": "The facility making the request",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://canshare.com/fhir/StructureDefinition/requesting-facility"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ServiceRequest.extension:return-tissue",
+        "path": "ServiceRequest.extension",
+        "sliceName": "return-tissue",
+        "short": "Does the patient want specimens returned",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://canshare.com/fhir/StructureDefinition/return-tissue"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,83 @@
+<div xmlns='http://www.w3.org/1999/xhtml'>
+<br/><strong>Extensions defined in this guide</strong><br/><br/>
+<table width='100%' border='1' cellspacing='0' cellpadding='5px'>
+<tr><th>Id</th><th>Url</th><th>Context of Use</th><th>Description</th><th>Purpose</th>
+<th>Status</th>
+</tr>
+<tr style='background-color:#FFCCCC'>
+<td><a href='StructureDefinition-approved-by.html'>approved-by</a></td>
+<td>http://canshare.com/fhir/StructureDefinition/approved-by</td>
+<td>
+<div>ServiceRequest</div>
+</td>
+<td><p>The practitioner who approved the request</p></td>
+<td></td>
+<td>active</td>
+</tr>
+<tr style='background-color:#FFCCCC'>
+<td><a href='StructureDefinition-completed-by.html'>completed-by</a></td>
+<td>http://canshare.com/fhir/StructureDefinition/completed-by</td>
+<td>
+<div>ServiceRequest</div>
+</td>
+<td><p>The practitioner who completed the request</p></td>
+<td></td>
+<td>active</td>
+</tr>
+<tr style='background-color:#FFCCCC'>
+<td><a href='StructureDefinition-copy-to-facility.html'>copy-to-facility</a></td>
+<td>http://canshare.com/fhir/StructureDefinition/copy-to-facility</td>
+<td>
+<div>ServiceRequest</div>
+</td>
+<td><p>The facility that should receive a copy of the request</p></td>
+<td></td>
+<td>active</td>
+</tr>
+<tr style='background-color:#FFCCCC'>
+<td><a href='StructureDefinition-copy-to.html'>copy-to</a></td>
+<td>http://canshare.com/fhir/StructureDefinition/copy-to</td>
+<td>
+<div>ServiceRequest</div>
+</td>
+<td><p>The practitioner who should receive a copy of the report</p></td>
+<td></td>
+<td>active</td>
+</tr>
+<tr style='background-color:#FFCCCC'>
+<td><a href='StructureDefinition-principal-clinician.html'>principal-clinician</a></td>
+<td>http://canshare.com/fhir/StructureDefinition/principal-clinician</td>
+<td>
+<div>ServiceRequest</div>
+</td>
+<td><p>The practitioner who is the principal carer for the patient for this condition</p></td>
+<td></td>
+<td>active</td>
+</tr>
+<tr style='background-color:#FFCCCC'>
+<td><a href='StructureDefinition-requesting-facility.html'>requesting-facility</a></td>
+<td>http://canshare.com/fhir/StructureDefinition/requesting-facility</td>
+<td>
+<div>ServiceRequest</div>
+</td>
+<td><p>The facility that requested the request</p></td>
+<td></td>
+<td>active</td>
+</tr>
+<tr style='background-color:#FFCCCC'>
+<td><a href='StructureDefinition-return-tissue.html'>return-tissue</a></td>
+<td>http://canshare.com/fhir/StructureDefinition/return-tissue</td>
+<td>
+<div>ServiceRequest</div>
+</td>
+<td><p>True if the patient has requested return of the tissue</p></td>
+<td></td>
+<td>active</td>
+</tr>
+</table>
+<a name="externalExtensions"> </a>
+<h3>Extensions used but defined elsewhere</h3>
+<table width='100%' border='1' cellspacing='0' cellpadding='5px'>
+<tr><th>Path</th><th>Url</th><th>Description</th><th>IG where defined</th></tr>
+</table>
+</div>

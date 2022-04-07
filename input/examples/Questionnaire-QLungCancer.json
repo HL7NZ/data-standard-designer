@@ -1,0 +1,2097 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "QLungCancer",
+  "url": "http://clinfhir.com/Questionnaire/lungcancer",
+  "status": "draft",
+  "name": "LungCancerHistologyRequest",
+  "title": "A form to capture data to accompany a histology request for lung cancer",
+  "item": [
+    {
+      "linkId": "demog",
+      "text": "Demographics",
+      "type": "group",
+      "extension": [
+        {
+          "url": "http://canshare.com/fhir/StructureDefinition/questionnaire-extractNotes",
+          "valueString": "Patient resource. Use conditional create."
+        }
+      ],
+      "item": [
+        {
+          "linkId": "NHI",
+          "text": "NHI",
+          "type": "string",
+          "extension": [
+            {
+              "url": "http://canshare.com/fhir/StructureDefinition/sdc-questionnaire-initialExpression",
+              "valueString": "%patient.identifier"
+            }
+          ]
+        },
+        {
+          "linkId": "patient-family",
+          "text": "Family name",
+          "type": "string",
+          "extension": [
+            {
+              "url": "http://canshare.com/fhir/StructureDefinition/sdc-questionnaire-initialExpression",
+              "valueString": "%patient.family"
+            },
+            {
+              "url": "http://canshare.com/fhir/StructureDefinition/questionnaire-extractNotes",
+              "valueString": "Patient.name.family"
+            }
+          ]
+        },
+        {
+          "linkId": "patient-given",
+          "text": "Given name",
+          "type": "string",
+          "repeats": true,
+          "extension": [
+            {
+              "url": "http://canshare.com/fhir/StructureDefinition/questionnaire-extractNotes",
+              "valueString": "Patient.name.given"
+            },
+            {
+              "url": "http://canshare.com/fhir/StructureDefinition/sdc-questionnaire-initialExpression",
+              "valueString": "%patient.given"
+            }
+          ]
+        },
+        {
+          "linkId": "patient-dob",
+          "text": "Date of Birth",
+          "type": "string",
+          "extension": [
+            {
+              "url": "http://canshare.com/fhir/StructureDefinition/sdc-questionnaire-initialExpression",
+              "valueString": "%patient.birthDate"
+            },
+            {
+              "url": "http://canshare.com/fhir/StructureDefinition/questionnaire-extractNotes",
+              "valueString": "Patient.birthDate"
+            }
+          ]
+        },
+        {
+          "linkId": "patient-gender",
+          "text": "Gender",
+          "type": "choice",
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "male",
+                "system": "http://hl7.org/fhir/administrative-gender",
+                "display": "Male"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "female",
+                "system": "http://hl7.org/fhir/administrative-gender",
+                "display": "Female"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "other",
+                "system": "http://hl7.org/fhir/administrative-gender",
+                "display": "Other"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "unknown",
+                "system": "http://hl7.org/fhir/administrative-gender",
+                "display": "Unknown"
+              }
+            }
+          ],
+          "extension": [
+            {
+              "url": "http://canshare.com/fhir/StructureDefinition/questionnaire-extractNotes",
+              "valueString": "Patient.gender"
+            },
+            {
+              "url": "http://canshare.com/fhir/StructureDefinition/sdc-questionnaire-initialExpression",
+              "valueString": "%patient.gender"
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "radio-button",
+                    "system": "http://hl7.org/fhir/questionnaire-item-control"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "patient-ethnicity",
+          "text": "Ethnicity",
+          "type": "choice",
+          "answerValueSet": "https://nzhts.digital.health.nz/fhir/ValueSet/ethnic-group-level-4-code",
+          "extension": [
+            {
+              "url": "http://canshare.com/fhir/StructureDefinition/questionnaire-extractNotes",
+              "valueString": "Patient.extension - url = http://hl7.org.nz/fhir/StructureDefinition/nz-ethnicity"
+            },
+            {
+              "url": "http://canshare.com/fhir/StructureDefinition/questionnaire-extractNotes",
+              "valueString": "Patient.extension"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "admin",
+      "text": "Administration",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "reviewer",
+          "text": "Reviewer",
+          "type": "string",
+          "code": [
+            {
+              "code": "reviewer",
+              "system": "http://canshare.com/cs/review",
+              "display": "Reviewer"
+            }
+          ],
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationExtract",
+              "valueBoolean": true
+            },
+            {
+              "url": "http://canshare.com/fhir/StructureDefinition/questionnaire-usageNotes",
+              "valueString": "The name of the person reviewing this form. Only used during the review process on identifier."
+            }
+          ]
+        },
+        {
+          "linkId": "completedby",
+          "text": "Completed by",
+          "type": "reference",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceResource",
+              "valueCode": "Practitioner"
+            },
+            {
+              "url": "http://canshare.com/fhir/StructureDefinition/questionnaire-extractNotes",
+              "valueString": "Reference from extension on ServiceRequest to practitioner. Practitioner should have conditional create on identifier."
+            }
+          ]
+        },
+        {
+          "linkId": "approvedby",
+          "text": "Approved by",
+          "type": "reference",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceResource",
+              "valueCode": "Practitioner"
+            },
+            {
+              "url": "http://canshare.com/fhir/StructureDefinition/questionnaire-extractNotes",
+              "valueString": "Reference from extension on ServiceRequest to practitioner. Practitioner should have conditional create on identifier."
+            }
+          ]
+        },
+        {
+          "linkId": "principalclinician",
+          "text": "Principal clinician caring for patient",
+          "type": "reference",
+          "code": [
+            {
+              "display": "Principal clinician"
+            }
+          ],
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceResource",
+              "valueCode": "Practitioner"
+            },
+            {
+              "url": "http://canshare.com/fhir/StructureDefinition/questionnaire-extractNotes",
+              "valueString": "Reference from extension on ServiceRequest. Practitioner should have conditional create on identifier."
+            }
+          ]
+        },
+        {
+          "linkId": "requestingclinician",
+          "text": "Requesting clinician",
+          "type": "reference",
+          "code": [
+            {
+              "display": "Requesting clinician"
+            }
+          ],
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceResource",
+              "valueCode": "Practitioner"
+            },
+            {
+              "url": "http://canshare.com/fhir/StructureDefinition/questionnaire-extractNotes",
+              "valueString": "Reference from ServiceRequest.requester. Practitioner should have conditional create on identifier."
+            }
+          ]
+        },
+        {
+          "linkId": "cc",
+          "text": "Copy to",
+          "type": "reference",
+          "repeats": true,
+          "code": [
+            {
+              "display": "Copy to"
+            }
+          ],
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceResource",
+              "valueCode": "Practitioner"
+            },
+            {
+              "url": "http://canshare.com/fhir/StructureDefinition/questionnaire-extractNotes",
+              "valueString": "Reference from extension on ServiceRequest. Practitioner should have conditional create on identifier."
+            }
+          ]
+        },
+        {
+          "linkId": "requestingfacility",
+          "text": "Requesting facility",
+          "type": "reference",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceResource",
+              "valueCode": "Organization"
+            },
+            {
+              "url": "http://canshare.com/fhir/StructureDefinition/questionnaire-extractNotes",
+              "valueString": "Reference from extension on ServiceRequest. Organization should have conditional create on identifier."
+            }
+          ]
+        },
+        {
+          "linkId": "laboratoryfacility",
+          "text": "Laboratory facility",
+          "type": "reference",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceResource",
+              "valueCode": "Organization"
+            },
+            {
+              "url": "http://canshare.com/fhir/StructureDefinition/questionnaire-extractNotes",
+              "valueString": "Reference from extension on ServiceRequest. Organisation should have conditional create on identifier."
+            }
+          ]
+        },
+        {
+          "linkId": "ccfacility",
+          "text": "Copy to facility",
+          "type": "reference",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceResource",
+              "valueCode": "Organization"
+            },
+            {
+              "url": "http://canshare.com/fhir/StructureDefinition/questionnaire-extractNotes",
+              "valueString": "Reference from extension on ServiceRequest. Organisation should have conditional create on identifier."
+            }
+          ]
+        },
+        {
+          "linkId": "returntissue",
+          "text": "Patient has requested return of body tissue",
+          "type": "boolean",
+          "extension": [
+            {
+              "url": "http://canshare.com/fhir/StructureDefinition/questionnaire-extractNotes",
+              "valueString": "Extension on ServiceRequest"
+            }
+          ]
+        },
+        {
+          "linkId": "admincomments",
+          "text": "Reviewer comments on admin",
+          "type": "text",
+          "code": [
+            {
+              "code": "admincomments",
+              "system": "http://canshare.com/cs/review",
+              "display": "Admin comments"
+            }
+          ],
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationExtract",
+              "valueBoolean": true
+            },
+            {
+              "url": "http://canshare.com/fhir/StructureDefinition/questionnaire-usageNotes",
+              "valueString": "Only used for reviewing a form"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "clinicalinfo",
+      "text": "Clinical Information",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "ss",
+          "text": "Smoking Status",
+          "type": "choice",
+          "code": [
+            {
+              "code": "272166-2",
+              "system": "http://loinc.org",
+              "display": "Smoking Status"
+            }
+          ],
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "current",
+                "system": "http://clinfhir.com/CodeSystem/ss",
+                "display": "Current smoker"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "exlt1yr",
+                "system": "http://clinfhir.com/CodeSystem/ss",
+                "display": "Ex smoker less than 1 year"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "exgt1yr",
+                "system": "http://clinfhir.com/CodeSystem/ss",
+                "display": "Ex smoker greater than 1 year"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "never",
+                "system": "http://clinfhir.com/CodeSystem/ss",
+                "display": "Never smoked"
+              }
+            }
+          ],
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationExtract",
+              "valueBoolean": true
+            },
+            {
+              "url": "http://canshare.com/fhir/StructureDefinition/questionnaire-usageNotes",
+              "valueString": "Refer to MOH guidelines"
+            }
+          ]
+        },
+        {
+          "linkId": "vs",
+          "text": "Vaping Status",
+          "type": "choice",
+          "code": [
+            {
+              "code": "272166-2",
+              "system": "http://loinc.org",
+              "display": "Vaping Status"
+            }
+          ],
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "currentnic",
+                "system": "http://canshare.com/CodeSystem/vs",
+                "display": "Currently vaping with nicotine"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "currentnonic",
+                "system": "http://canshare.com/CodeSystem/vs",
+                "display": "Currently vaping without nicotine"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "current",
+                "system": "http://canshare.com/CodeSystem/vs",
+                "display": "Currently vaping"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "exlt1yr",
+                "system": "http://canshare.com/CodeSystem/vs",
+                "display": "Ex vaping less than 1 year"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "exgt1yr",
+                "system": "http://canshare.com/CodeSystem/vs",
+                "display": "Ex vaping more than 1 year"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "trying",
+                "system": "http://canshare.com/CodeSystem/vs",
+                "display": "Trying to give up vaping"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "never",
+                "system": "http://canshare.com/CodeSystem/vs",
+                "display": "Never vaped"
+              }
+            }
+          ],
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationExtract",
+              "valueBoolean": true
+            }
+          ]
+        },
+        {
+          "linkId": "absestos",
+          "text": "Asbestos exposure",
+          "type": "choice",
+          "code": [
+            {
+              "code": "asbestos",
+              "system": "http://canshare.com/cs",
+              "display": "Asbestos"
+            }
+          ],
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "Y",
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0136",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "N",
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0136",
+                "display": "No"
+              }
+            }
+          ],
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "radio-button",
+                    "system": "http://hl7.org/fhir/questionnaire-item-control"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationExtract",
+              "valueBoolean": true
+            }
+          ]
+        },
+        {
+          "linkId": "symptomsGroup",
+          "text": "Presenting symptomatology",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "symptoms",
+              "text": "Presenting symptoms",
+              "type": "choice",
+              "code": [
+                {
+                  "code": "presenting",
+                  "system": "http://canshare.com/cs",
+                  "display": "Presenting symptoms"
+                }
+              ],
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "Y",
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0136",
+                    "display": "Yes"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "N",
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0136",
+                    "display": "No"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "asked-unknown",
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0136",
+                    "display": "Unknown"
+                  }
+                }
+              ],
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "radio-button",
+                        "system": "http://hl7.org/fhir/questionnaire-item-control"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "symptomsDetails",
+              "text": "Details",
+              "type": "text",
+              "code": [
+                {
+                  "code": "presentingdetail",
+                  "system": "http://canshare.com/cs",
+                  "display": "Presenting symptoms details"
+                }
+              ],
+              "enableWhen": [
+                {
+                  "question": "symptoms",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "Y",
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0136"
+                  }
+                }
+              ],
+              "extension": [
+                {
+                  "url": "http://canshare.com/fhir/StructureDefinition/questionnaire-extractNotes",
+                  "valueString": "If the 'present symptoms' is 'no' or 'unknown', then extract an Observation with that value. \nOtherwise create an Observation with this text."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "previousCytoGroup",
+          "text": "Previous cyto",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "previousCyto",
+              "text": "Result of any previous cytological investigations or biopsies",
+              "code": [
+                {
+                  "code": "previouscyto",
+                  "system": "http://canshare.com/cs",
+                  "display": "Previous cyto"
+                }
+              ],
+              "type": "choice",
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "Y",
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0136",
+                    "display": "Yes"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "N",
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0136",
+                    "display": "No"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "asked-unknown",
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0136",
+                    "display": "Unknown"
+                  }
+                }
+              ],
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "radio-button",
+                        "system": "http://hl7.org/fhir/questionnaire-item-control"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "url": "http://canshare.com/fhir/StructureDefinition/questionnaire-sourceStandard",
+                  "valueString": "WHO Tumour Classification"
+                }
+              ]
+            },
+            {
+              "linkId": "previousCytoDetails",
+              "text": "Details",
+              "code": [
+                {
+                  "code": "previouscytodetails",
+                  "system": "http://canshare.com/cs",
+                  "display": "Previous cyto details"
+                }
+              ],
+              "type": "text",
+              "enableWhen": [
+                {
+                  "question": "previousCyto",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "Y",
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0136"
+                  }
+                }
+              ],
+              "extension": [
+                {
+                  "url": "http://canshare.com/fhir/StructureDefinition/questionnaire-extractNotes",
+                  "valueString": "If the 'previous Cyto' is 'no' or 'unknown', then extract an Observation with that value. \nOtherwise create an Observation with this text."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "previousTreatmentGroup",
+          "text": "Previous treatment",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "previousTreatment",
+              "text": "Result of any previous treatment",
+              "code": [
+                {
+                  "code": "prevTx",
+                  "system": "http://canshare.com/cs"
+                }
+              ],
+              "type": "choice",
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "Y",
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0136",
+                    "display": "Yes"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "N",
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0136",
+                    "display": "No"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "asked-unknown",
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0136",
+                    "display": "Unknown"
+                  }
+                }
+              ],
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "radio-button",
+                        "system": "http://hl7.org/fhir/questionnaire-item-control"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "previousTreatmentDetails",
+              "text": "Details",
+              "code": [
+                {
+                  "code": "prevTxDtl",
+                  "system": "http://canshare.com/cs"
+                }
+              ],
+              "type": "text",
+              "enableWhen": [
+                {
+                  "question": "previousTreatment",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "Y",
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0136"
+                  }
+                }
+              ],
+              "extension": [
+                {
+                  "url": "http://canshare.com/fhir/StructureDefinition/questionnaire-extractNotes",
+                  "valueString": "If the 'previous treatment' is 'no' or 'unknown', then extract an Observation with that value. \nOtherwise create an Observation with this text."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "previousDiagnosistGroup",
+          "text": "Previous diagnosis",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "previousDiagnosis",
+              "code": [
+                {
+                  "code": "prevDx",
+                  "system": "http://canshare.com/cs"
+                }
+              ],
+              "text": "Details of any previous diagnosis",
+              "type": "choice",
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "Y",
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0136",
+                    "display": "Yes"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "N",
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0136",
+                    "display": "No"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "asked-unknown",
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0136",
+                    "display": "Unknown"
+                  }
+                }
+              ],
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "radio-button",
+                        "system": "http://hl7.org/fhir/questionnaire-item-control"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "previousDiagnosisDetails",
+              "text": "Details",
+              "code": [
+                {
+                  "code": "prevTxDtl",
+                  "system": "http://canshare.com/cs"
+                }
+              ],
+              "type": "text",
+              "enableWhen": [
+                {
+                  "question": "previousDiagnosis",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "Y",
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0136"
+                  }
+                }
+              ],
+              "extension": [
+                {
+                  "url": "http://canshare.com/fhir/StructureDefinition/questionnaire-extractNotes",
+                  "valueString": "If the 'previous diagnosis' is 'no' or 'unknown', then extract an Observation with that value. \nOtherwise create an Observation with this text."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "radiologyGroup",
+          "text": "Relevant radiology",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "radiology",
+              "text": "Details of any relevant radiology",
+              "code": [
+                {
+                  "code": "prevRadiol",
+                  "system": "http://canshare.com/cs"
+                }
+              ],
+              "type": "choice",
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "unk",
+                    "system": "http://snomed.info/sct",
+                    "display": "Unknown"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "tnm",
+                    "system": "http://snomed.info/sct",
+                    "display": "Clinical TNM"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "other",
+                    "system": "http://snomed.info/sct",
+                    "display": "Other"
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "radiologyOther",
+              "text": "Other relevant details",
+              "code": [
+                {
+                  "code": "prevRadiolDtl",
+                  "system": "http://canshare.com/cs"
+                }
+              ],
+              "type": "text",
+              "enableWhen": [
+                {
+                  "question": "radiology",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "other",
+                    "system": "http://snomed.info/sct"
+                  }
+                }
+              ],
+              "extension": [
+                {
+                  "url": "http://canshare.com/fhir/StructureDefinition/questionnaire-extractNotes",
+                  "valueString": "If the 'Details of any relevant radiology' is 'no' or 'unknown', then extract an Observation with that value. \nOtherwise create an Observation with this text."
+                }
+              ]
+            },
+            {
+              "linkId": "clinicalT",
+              "text": "Clinical T ",
+              "type": "string",
+              "code": [
+                {
+                  "code": "21905-5",
+                  "system": "http://loinc.org"
+                }
+              ],
+              "enableWhen": [
+                {
+                  "question": "radiology",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "tnm",
+                    "system": "http://snomed.info/sct"
+                  }
+                }
+              ],
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationExtract",
+                  "valueBoolean": true
+                }
+              ]
+            },
+            {
+              "linkId": "clinicalN",
+              "text": "Clinical N",
+              "type": "string",
+              "code": [
+                {
+                  "code": "21906-3",
+                  "system": "http://loinc.org"
+                }
+              ],
+              "enableWhen": [
+                {
+                  "question": "radiology",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "tnm",
+                    "system": "http://snomed.info/sct"
+                  }
+                }
+              ],
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationExtract",
+                  "valueBoolean": true
+                }
+              ]
+            },
+            {
+              "linkId": "clinicalM",
+              "text": "Clinical M",
+              "type": "string",
+              "code": [
+                {
+                  "code": "21907-1",
+                  "system": "http://loinc.org"
+                }
+              ],
+              "enableWhen": [
+                {
+                  "question": "radiology",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "tnm",
+                    "system": "http://snomed.info/sct"
+                  }
+                }
+              ],
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationExtract",
+                  "valueBoolean": true
+                }
+              ]
+            },
+            {
+              "linkId": "clinicalGroupStage",
+              "text": "Clinical Group Stage",
+              "type": "string",
+              "code": [
+                {
+                  "code": "21908-9",
+                  "system": "http://loinc.org"
+                }
+              ],
+              "enableWhen": [
+                {
+                  "question": "radiology",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "tnm",
+                    "system": "http://snomed.info/sct"
+                  }
+                }
+              ],
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationExtract",
+                  "valueBoolean": true
+                },
+                {
+                  "url": "http://canshare.com/fhir/StructureDefinition/questionnaire-extractNotes",
+                  "valueString": "Has references in the 'component' element to the individual TNM Observations"
+                }
+              ]
+            },
+            {
+              "linkId": "clinicalTNMEdition",
+              "text": "Clinical TNM edition",
+              "type": "string",
+              "enableWhen": [
+                {
+                  "question": "radiology",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "tnm",
+                    "system": "http://snomed.info/sct"
+                  }
+                }
+              ],
+              "extension": [
+                {
+                  "url": "http://canshare.com/fhir/StructureDefinition/questionnaire-extractNotes",
+                  "valueString": "An extension in all of the the TNM Observations"
+                }
+              ]
+            },
+            {
+              "linkId": "clinicalStageDate",
+              "text": "Clinical Stage date",
+              "type": "date",
+              "enableWhen": [
+                {
+                  "question": "radiology",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "tnm",
+                    "system": "http://snomed.info/sct"
+                  }
+                }
+              ],
+              "extension": [
+                {
+                  "url": "http://canshare.com/fhir/StructureDefinition/questionnaire-extractNotes",
+                  "valueString": "The Observation.effectiveDateTime on all the TNM observations "
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "neoadjuvantGroup",
+          "text": "Relevant neoadjuvant",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "neoadjuvant",
+              "text": "Details of any relevant neoadjuvant therapy",
+              "type": "choice",
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "Y",
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0136",
+                    "display": "Yes"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "N",
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0136",
+                    "display": "No"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "asked-unknown",
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0136",
+                    "display": "Unknown"
+                  }
+                }
+              ],
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "radio-button",
+                        "system": "http://hl7.org/fhir/questionnaire-item-control"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "neoadjuvantDetails",
+              "text": "Details",
+              "type": "text",
+              "enableWhen": [
+                {
+                  "question": "neoadjuvant",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "Y",
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0136"
+                  }
+                }
+              ],
+              "extension": [
+                {
+                  "url": "http://canshare.com/fhir/StructureDefinition/questionnaire-extractNotes",
+                  "valueString": "If the 'Details of any relevant neoadjuvant therapy' is 'no' or 'unknown', then extract an Observation with that value. \nOtherwise create an Observation with this text."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "otherclinical",
+          "text": "Other Clinical data ",
+          "type": "text",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationExtract",
+              "valueBoolean": true
+            }
+          ]
+        },
+        {
+          "linkId": "clinicalcomments",
+          "text": "Reviewer comments on clinical",
+          "type": "text",
+          "code": [
+            {
+              "code": "clinicalcomments",
+              "system": "http://canshare.com/cs/review",
+              "display": "Clinical comments"
+            }
+          ],
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationExtract",
+              "valueBoolean": true
+            },
+            {
+              "url": "http://canshare.com/fhir/StructureDefinition/questionnaire-usageNotes",
+              "valueString": "Only used for reviewing a form"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "tumourclinical",
+      "text": "Tumour Clinical",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "tumourprocedure",
+          "text": "Procedure",
+          "type": "choice",
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "diag",
+                "display": "Diagnostic (biopsy / cytology)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "resec",
+                "display": "Resection specimen (operative)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "frozen",
+                "display": "Frozen section"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "tumourindication",
+          "text": "Clinical Indication",
+          "type": "choice",
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "new",
+                "display": "New primary cancer"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "regional",
+                "display": "Regional recurrance"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "distant",
+                "display": "distant metastasis"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "other",
+                "display": "Other"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "tumoursite",
+          "text": "Tumour site",
+          "type": "choice",
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "rul",
+                "system": "http://clinfhir.com/CodeSystem/site",
+                "display": "Right Upper Lobe"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "rml",
+                "system": "http://clinfhir.com/CodeSystem/site",
+                "display": "Right Middle Lobe"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "rll",
+                "system": "http://clinfhir.com/CodeSystem/site",
+                "display": "Right Lower Lobe"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "lul",
+                "system": "http://clinfhir.com/CodeSystem/site",
+                "display": "Left Upper Lobe"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "lll",
+                "system": "http://clinfhir.com/CodeSystem/site",
+                "display": "Left Lower Lobe"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "mb",
+                "system": "http://clinfhir.com/CodeSystem/site",
+                "display": "Main Bronchus"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "tumourcomments",
+          "text": "Reviewer comments on tumour",
+          "type": "text",
+          "code": [
+            {
+              "code": "tumourcomments",
+              "system": "http://canshare.com/cs/review",
+              "display": "Tumour comments"
+            }
+          ],
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationExtract",
+              "valueBoolean": true
+            },
+            {
+              "url": "http://canshare.com/fhir/StructureDefinition/questionnaire-usageNotes",
+              "valueString": "Only used for reviewing a form"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "proc",
+      "text": "Procedure",
+      "type": "group",
+      "repeats": true,
+      "item": [
+        {
+          "linkId": "procedureTypeGroup",
+          "text": "Select procedure",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "procedureType",
+              "text": "Select procedure",
+              "type": "choice",
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "bron",
+                    "system": "http://canshare.com/cs",
+                    "display": "Bronchoscopic"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "trans",
+                    "display": "Transthoracic"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "frozen",
+                    "display": "Frozen section (intra operative)"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "op",
+                    "display": "Operative"
+                  }
+                }
+              ],
+              "extension": [
+                {
+                  "url": "http://canshare.com/fhir/StructureDefinition/questionnaire-extractNotes",
+                  "valueString": "A selector on the form. Not extracted itself."
+                }
+              ]
+            },
+            {
+              "linkId": "bronchoscopicTumourSite",
+              "text": "Tumour site",
+              "type": "choice",
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "rul",
+                    "system": "http://clinfhir.com/CodeSystem/site",
+                    "display": "Right Upper Lobe"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "rml",
+                    "system": "http://clinfhir.com/CodeSystem/site",
+                    "display": "Right Middle Lobe"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "rll",
+                    "system": "http://clinfhir.com/CodeSystem/site",
+                    "display": "Right Lower Lobe"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "lul",
+                    "system": "http://clinfhir.com/CodeSystem/site",
+                    "display": "Left Upper Lobe"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "lll",
+                    "system": "http://clinfhir.com/CodeSystem/site",
+                    "display": "Left Lower Lobe"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "mb",
+                    "system": "http://clinfhir.com/CodeSystem/site",
+                    "display": "Main Bronchus"
+                  }
+                }
+              ],
+              "enableWhen": [
+                {
+                  "question": "procedureType",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "bron",
+                    "system": "http://canshare.com/cs"
+                  }
+                }
+              ],
+              "extension": [
+                {
+                  "url": "http://canshare.com/fhir/StructureDefinition/questionnaire-extractNotes",
+                  "valueString": "Procedure.bodySite element"
+                }
+              ]
+            },
+            {
+              "linkId": "bronchoscopicProcedureType",
+              "text": "Procedure type",
+              "type": "choice",
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "ebiop",
+                    "display": "Endobronchial biopsy"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "tbiop",
+                    "display": "Transbronchial biopsy"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "wash",
+                    "display": "Bronchial washings"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "brush",
+                    "display": "Bronchial brushings"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "lavage",
+                    "display": "Bronchoalveolar lavage"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "needle",
+                    "display": "Transbronchial needle aspirate (TBNA)"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "ebus",
+                    "display": "Endobronchial Ultrasound-guided Bronchoscopy (EBUS)"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "other",
+                    "display": "Other"
+                  }
+                }
+              ],
+              "enableWhen": [
+                {
+                  "question": "procedureType",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "bron",
+                    "system": "http://canshare.com/cs"
+                  }
+                }
+              ],
+              "extension": [
+                {
+                  "url": "http://canshare.com/fhir/StructureDefinition/questionnaire-extractNotes",
+                  "valueString": "Procedure resource. Note that bodySite element used for tumour site"
+                }
+              ]
+            },
+            {
+              "linkId": "bronchoscopicProcedureNotes",
+              "text": "Bronchoscopic additional comments",
+              "type": "text",
+              "enableWhen": [
+                {
+                  "question": "procedureType",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "bron",
+                    "system": "http://canshare.com/cs"
+                  }
+                }
+              ],
+              "extension": [
+                {
+                  "url": "http://canshare.com/fhir/StructureDefinition/questionnaire-extractNotes",
+                  "valueString": "Procedure.note"
+                }
+              ]
+            },
+            {
+              "linkId": "transthoracicProcedureSite",
+              "text": "Tumour site",
+              "type": "choice",
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "rul",
+                    "system": "http://clinfhir.com/CodeSystem/site",
+                    "display": "Right Upper Lobe"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "rml",
+                    "system": "http://clinfhir.com/CodeSystem/site",
+                    "display": "Right Middle Lobe"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "rll",
+                    "system": "http://clinfhir.com/CodeSystem/site",
+                    "display": "Right Lower Lobe"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "lul",
+                    "system": "http://clinfhir.com/CodeSystem/site",
+                    "display": "Left Upper Lobe"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "lll",
+                    "system": "http://clinfhir.com/CodeSystem/site",
+                    "display": "Left Lower Lobe"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "lin",
+                    "display": "Lingula"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "trac",
+                    "display": "Trachea"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "cw",
+                    "display": "Chest wall"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "ns",
+                    "display": "Not Specified"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "oth",
+                    "display": "Other"
+                  }
+                }
+              ],
+              "enableWhen": [
+                {
+                  "question": "procedureType",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "trans",
+                    "system": "http://canshare.com/cs"
+                  }
+                }
+              ],
+              "extension": [
+                {
+                  "url": "http://canshare.com/fhir/StructureDefinition/questionnaire-extractNotes",
+                  "valueString": "Procedure.bodySite element"
+                }
+              ]
+            },
+            {
+              "linkId": "transthoracicProcedureType",
+              "text": "Type of transthoracic procedure",
+              "type": "choice",
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "oth",
+                    "display": "Transthoracic core needle biopsy"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "tfna",
+                    "display": "Transthoracic fine needle aspirate"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "pfa",
+                    "display": "Pleural fluid aspirate"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "vats",
+                    "display": "Video-assisted surgery (VATS) biopsy"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "ob",
+                    "display": "Open biopsy"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "oth",
+                    "display": "Other"
+                  }
+                }
+              ],
+              "enableWhen": [
+                {
+                  "question": "procedureType",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "trans",
+                    "system": "http://canshare.com/cs"
+                  }
+                }
+              ],
+              "extension": [
+                {
+                  "url": "http://canshare.com/fhir/StructureDefinition/questionnaire-extractNotes",
+                  "valueString": "Procedure.code element"
+                }
+              ]
+            },
+            {
+              "linkId": "transthoracicProcedureNote",
+              "text": "Transthoracic additional comments",
+              "type": "text",
+              "enableWhen": [
+                {
+                  "question": "procedureType",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "trans",
+                    "system": "http://canshare.com/cs"
+                  }
+                }
+              ],
+              "extension": [
+                {
+                  "url": "http://canshare.com/fhir/StructureDefinition/questionnaire-extractNotes",
+                  "valueString": "Procedure.note element"
+                }
+              ]
+            },
+            {
+              "linkId": "frozensectionindication",
+              "text": "Clinical indication for frozen section",
+              "type": "choice",
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "pal",
+                    "display": "Confirm malignancy, proceed to oncologic/palliative care"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "anc",
+                    "display": "Confirm malignancy, confirm sufficient lesional material for ancillary studies"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "clear",
+                    "display": "Confirm margins clear of malignancy"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "oth",
+                    "display": "Other"
+                  }
+                }
+              ],
+              "enableWhen": [
+                {
+                  "question": "procedureType",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "frozen",
+                    "system": "http://canshare.com/cs"
+                  }
+                }
+              ],
+              "extension": [
+                {
+                  "url": "http://canshare.com/fhir/StructureDefinition/questionnaire-extractNotes",
+                  "valueString": "Procedure.reasonCode element"
+                }
+              ]
+            },
+            {
+              "linkId": "frozensectiontype",
+              "text": "Type of frozen section",
+              "type": "choice",
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "pal",
+                    "display": "Wedge resection"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "anc",
+                    "display": "Lymph node"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "oth",
+                    "display": "Other"
+                  }
+                }
+              ],
+              "enableWhen": [
+                {
+                  "question": "procedureType",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "frozen",
+                    "system": "http://canshare.com/cs"
+                  }
+                }
+              ],
+              "extension": [
+                {
+                  "url": "http://canshare.com/fhir/StructureDefinition/questionnaire-extractNotes",
+                  "valueString": "Procedure.code element"
+                }
+              ]
+            },
+            {
+              "linkId": "frozensectionnote",
+              "text": "Frozen section additional comments",
+              "type": "text",
+              "enableWhen": [
+                {
+                  "question": "procedureType",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "frozen",
+                    "system": "http://canshare.com/cs"
+                  }
+                }
+              ],
+              "extension": [
+                {
+                  "url": "http://canshare.com/fhir/StructureDefinition/questionnaire-extractNotes",
+                  "valueString": "Procedure.note element"
+                }
+              ]
+            },
+            {
+              "linkId": "procedureoperativets",
+              "text": "Tumour site",
+              "type": "choice",
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "rul",
+                    "system": "http://clinfhir.com/CodeSystem/site",
+                    "display": "Right Upper Lobe"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "rml",
+                    "system": "http://clinfhir.com/CodeSystem/site",
+                    "display": "Right Middle Lobe"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "rll",
+                    "system": "http://clinfhir.com/CodeSystem/site",
+                    "display": "Right Lower Lobe"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "lul",
+                    "system": "http://clinfhir.com/CodeSystem/site",
+                    "display": "Left Upper Lobe"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "lll",
+                    "system": "http://clinfhir.com/CodeSystem/site",
+                    "display": "Left Lower Lobe"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "lin",
+                    "display": "Lingula"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "trac",
+                    "display": "Trachea"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "cw",
+                    "display": "Chest wall"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "ns",
+                    "display": "Not Specified"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "oth",
+                    "display": "Other"
+                  }
+                }
+              ],
+              "enableWhen": [
+                {
+                  "question": "procedureType",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "op",
+                    "system": "http://canshare.com/cs"
+                  }
+                }
+              ],
+              "extension": [
+                {
+                  "url": "http://canshare.com/fhir/StructureDefinition/questionnaire-extractNotes",
+                  "valueString": "Procedure.bodySite element"
+                }
+              ]
+            },
+            {
+              "linkId": "procedureoperativeproc",
+              "text": "Procedure type",
+              "type": "choice",
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "wedge",
+                    "display": "Wedge resection"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "seg",
+                    "display": "Segmentectomy"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "lob",
+                    "display": "Lobectomy"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "bilob",
+                    "display": "BiLobectomy"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "pneum",
+                    "display": "Pneumonectomy"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "sleeve",
+                    "display": "Sleeve resection"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "oth",
+                    "display": "Other"
+                  }
+                }
+              ],
+              "enableWhen": [
+                {
+                  "question": "procedureType",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "op",
+                    "system": "http://canshare.com/cs"
+                  }
+                }
+              ],
+              "extension": [
+                {
+                  "url": "http://canshare.com/fhir/StructureDefinition/questionnaire-extractNotes",
+                  "valueString": "Procedure.code element"
+                }
+              ]
+            },
+            {
+              "linkId": "procedureoperativeadj",
+              "text": "Involvement of adjacent organs",
+              "type": "choice",
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "ni",
+                    "display": "Not identified"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "pres",
+                    "display": "Present"
+                  }
+                }
+              ],
+              "enableWhen": [
+                {
+                  "question": "procedureType",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "op",
+                    "system": "http://canshare.com/cs"
+                  }
+                }
+              ],
+              "extension": [
+                {
+                  "url": "http://canshare.com/fhir/StructureDefinition/questionnaire-extractNotes",
+                  "valueString": "Procedure.extension element"
+                }
+              ]
+            },
+            {
+              "linkId": "procedureoperativeComments",
+              "text": "Additional comments on operative procedure",
+              "type": "text",
+              "enableWhen": [
+                {
+                  "question": "procedureType",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "op",
+                    "system": "http://canshare.com/cs"
+                  }
+                }
+              ],
+              "extension": [
+                {
+                  "url": "http://canshare.com/fhir/StructureDefinition/questionnaire-extractNotes",
+                  "valueString": "Procedure.note element"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "additionalSpecimens",
+          "text": "Additional specimens submitted",
+          "type": "choice",
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "none",
+                "display": "None"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "ln",
+                "display": "Lymph node"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "oth",
+                "display": "Other"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "procedurecomments",
+          "text": "Reviewer comments on procedure",
+          "type": "text",
+          "code": [
+            {
+              "code": "procedurecomments",
+              "system": "http://canshare.com/cs/review",
+              "display": "Procedure comments"
+            }
+          ],
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationExtract",
+              "valueBoolean": true
+            },
+            {
+              "url": "http://canshare.com/fhir/StructureDefinition/questionnaire-usageNotes",
+              "valueString": "Only used for reviewing a form"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "specimen",
+      "text": "Specimen Information",
+      "type": "group",
+      "repeats": true,
+      "extension": [
+        {
+          "url": "http://canshare.com/fhir/StructureDefinition/questionnaire-extractNotes",
+          "valueString": "There's a reference from the Procedure to the Specimen/s"
+        }
+      ],
+      "item": [
+        {
+          "linkId": "specLabel",
+          "text": "Specimen Label",
+          "type": "string"
+        },
+        {
+          "linkId": "specimencomments",
+          "text": "Reviewer comments",
+          "type": "text",
+          "code": [
+            {
+              "code": "specimencomments",
+              "system": "http://canshare.com/cs/review",
+              "display": "Specimen comments"
+            }
+          ],
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationExtract",
+              "valueBoolean": true
+            },
+            {
+              "url": "http://canshare.com/fhir/StructureDefinition/questionnaire-usageNotes",
+              "valueString": "Only used for reviewing a form"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,596 @@
+{
+  "resourceType": "Bundle",
+  "id": "lungRequest",
+  "type": "collection",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patientLung",
+        "text": {
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Lance Lung</div>",
+          "status": "generated"
+        },
+        "name": [
+          {
+            "given": [
+              "Lance"
+            ],
+            "family": "Lung",
+            "text": "Lance Lung"
+          }
+        ],
+        "identifier": [
+          {
+            "system": "https://standards.digital.health.nz/ns/nhi-id",
+            "value": "WER4568"
+          }
+        ],
+        "gender": "male"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "practitionerCC",
+        "text": {
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Charlene copyto</div>",
+          "status": "generated"
+        },
+        "name": [
+          {
+            "given": [
+              "Charlene"
+            ],
+            "family": "Copyto",
+            "text": "Charlene Copyto"
+          }
+        ],
+        "identifier": [
+          {
+            "system": "https://standards.digital.health.nz/ns/hpi-person-id",
+            "value": "abc"
+          }
+        ],
+        "gender": "female"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "practitionerRequesting",
+        "text": {
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Reginald requester</div>",
+          "status": "generated"
+        },
+        "name": [
+          {
+            "given": [
+              "Reginald"
+            ],
+            "family": "Requester",
+            "text": "Reginald Requester"
+          }
+        ],
+        "identifier": [
+          {
+            "system": "https://standards.digital.health.nz/ns/hpi-person-id",
+            "value": "ghi"
+          }
+        ],
+        "gender": "male"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ServiceRequest",
+        "id": "serviceRequestLung",
+        "text": {
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Pathology request</div>",
+          "status": "generated"
+        },
+        "extension": [
+          {
+            "url": "http://canshare.com/cc",
+            "valueReference": {
+              "reference": "Practitioner/practitionerCC"
+            }
+          }
+        ],
+        "status": "active",
+        "intent": "order",
+        "subject": {
+          "reference": "Patient/patientLung"
+        },
+        "requester": {
+          "reference": "Practitioner/practitionerRequesting"
+        },
+        "supportingInfo": [
+          {
+            "reference": "Observation/observationSS"
+          },
+          {
+            "reference": "Observation/observationVaping"
+          },
+          {
+            "reference": "Observation/observationAsbestos"
+          },
+          {
+            "reference": "Observation/observationPresenting"
+          },
+          {
+            "reference": "Observation/observationCyto"
+          },
+          {
+            "reference": "Observation/observationPreviousTx"
+          },
+          {
+            "reference": "Observation/observationPreviousDx"
+          },
+          {
+            "reference": "Observation/observationRelevantRadiol"
+          },
+          {
+            "reference": "Observation/observationNeoadjuvent"
+          },
+          {
+            "reference": "Observation/observationOtherrelevant"
+          },
+          {
+            "reference": "Procedure/procedurePerformed"
+          },
+          {
+            "reference": "Observation/observationIndication"
+          },
+          {
+            "reference": "BodyStructure/bodyStructureTumour"
+          },
+          {
+            "reference": "Specimen/specimen1"
+          },
+          {
+            "reference": "Media/mediaImage"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observationSS",
+        "meta": {
+          "profile": [
+            "http://hl7.org.nz/fhir/StructureDefinition/spath-observation-ss"
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "code": "ss",
+              "system": "http://canshare.com/cs",
+              "display": "Smoking Status"
+            }
+          ]
+        },
+        "text": {
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Smoking status</div>",
+          "status": "generated"
+        },
+        "status": "final",
+        "subject": {
+          "reference": "Patient/patientLung"
+        },
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "code": "currents",
+              "system": "http://canshare.com/cs",
+              "display": "Current Smoker"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observationVaping",
+        "text": {
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Vaping status</div>",
+          "status": "generated"
+        },
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "code": "vap",
+              "system": "http://canshare.com/cs",
+              "display": "Vaping Status"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patientLung"
+        },
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "code": "current",
+              "system": "http://canshare.com/cs",
+              "display": "Current Vaper"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observationAsbestos",
+        "text": {
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Asbestos exposure</div>",
+          "status": "generated"
+        },
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "code": "vap",
+              "system": "http://canshare.com/cs",
+              "display": "Asbestos exposure"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patientLung"
+        },
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "code": "no",
+              "system": "http://canshare.com/cs",
+              "display": "No"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observationPresenting",
+        "text": {
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Presenting symptoms</div>",
+          "status": "generated"
+        },
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "code": "pres",
+              "system": "http://canshare.com/cs",
+              "display": "Presenting symptoms"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patientLung"
+        },
+        "valueString": "These are the symptoms"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observationCyto",
+        "text": {
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Previous cytology</div>",
+          "status": "generated"
+        },
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "code": "pres",
+              "system": "http://canshare.com/cs",
+              "display": "Previous cytology"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patientLung"
+        },
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "code": "N",
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0136",
+              "display": "No"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observationPreviousTx",
+        "text": {
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Previous treatment</div>",
+          "status": "generated"
+        },
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "code": "pres",
+              "system": "http://canshare.com/cs",
+              "display": "Previous Treatment for this tumour"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patientLung"
+        },
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "code": "N",
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0136",
+              "display": "No"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observationPreviousDx",
+        "text": {
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Previous diagnosis</div>",
+          "status": "generated"
+        },
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "code": "pres",
+              "system": "http://canshare.com/cs",
+              "display": "Previous Cancer diagnosis"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patientLung"
+        },
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "code": "N",
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0136",
+              "display": "No"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observationRelevantRadiol",
+        "text": {
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Relevant radiology</div>",
+          "status": "generated"
+        },
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "code": "pres",
+              "system": "http://canshare.com/cs",
+              "display": "Relevant radiology"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patientLung"
+        },
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "code": "N",
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0136",
+              "display": "No"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observationNeoadjuvent",
+        "text": {
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Neo adjucent therapy</div>",
+          "status": "generated"
+        },
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "code": "neo",
+              "system": "http://canshare.com/cs",
+              "display": "Neoadjuvent therapy"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patientLung"
+        },
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "code": "notadmin",
+              "system": "http://canshare.com/cs",
+              "display": "Not administered"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observationOtherrelevant",
+        "text": {
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Other clinical info</div>",
+          "status": "generated"
+        },
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "code": "oitherrel",
+              "system": "http://canshare.com/cs",
+              "display": "Other relevant clincial info"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patientLung"
+        },
+        "valueString": "Other clincial details here"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedurePerformed",
+        "text": {
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Biopsy</div>",
+          "status": "generated"
+        },
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "code": "biopsy",
+              "system": "http://canshare.com/cs",
+              "display": "Biopsy"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patientLung"
+        },
+        "extension": [
+          {
+            "url": "http://canshare.com/adjacentOrganInvolvement",
+            "extension": [
+              {
+                "url": "involved",
+                "valueBoolean": true
+              },
+              {
+                "url": "notes",
+                "valueString": "Deeply infiltrated into chest wall"
+              }
+            ]
+          },
+          {
+            "url": "http://canshare.com/adjacentOrganInvolvement",
+            "valueString": "Unable to completely remove"
+          }
+        ],
+        "note": [
+          {
+            "text": "Here are other notes"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observationIndication",
+        "text": {
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Clinical indication</div>",
+          "status": "generated"
+        },
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "code": "ind",
+              "system": "http://canshare.com/cs",
+              "display": "Indication"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patientLung"
+        },
+        "valueString": "other indication"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "BodyStructure",
+        "id": "bodyStructureTumour",
+        "text": {
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Tumour</div>",
+          "status": "generated"
+        },
+        "patient": {
+          "reference": "Patient/patientLung"
+        },
+        "location": {
+          "coding": [
+            {
+              "code": "9875009",
+              "system": "http://snomed.info/sct",
+              "display": "Thymus"
+            }
+          ]
+        },
+        "description": "Other details here"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Specimen",
+        "id": "specimen1",
+        "text": {
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Specimen</div>",
+          "status": "generated"
+        },
+        "subject": {
+          "reference": "Patient/patientLung"
+        },
+        "note": [
+          {
+            "text": "Here is where the label goes"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Media",
+        "id": "mediaImage",
+        "text": {
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Image</div>",
+          "status": "generated"
+        },
+        "status": "completed",
+        "subject": {
+          "reference": "Patient/patientLung"
+        },
+        "content": {
+          "title": "What the image is about"
+        }
+      }
+    }
+  ]
+}

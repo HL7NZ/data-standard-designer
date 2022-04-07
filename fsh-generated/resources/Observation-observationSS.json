@@ -1,0 +1,35 @@
+{
+  "resourceType": "Observation",
+  "id": "observationSS",
+  "meta": {
+    "profile": [
+      "http://hl7.org.nz/fhir/StructureDefinition/spath-observation-ss"
+    ]
+  },
+  "code": {
+    "coding": [
+      {
+        "code": "ss",
+        "system": "http://canshare.com/cs",
+        "display": "Smoking Status"
+      }
+    ]
+  },
+  "text": {
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Smoking status</div>",
+    "status": "generated"
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/patientLung"
+  },
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "code": "currents",
+        "system": "http://canshare.com/cs",
+        "display": "Current Smoker"
+      }
+    ]
+  }
+}

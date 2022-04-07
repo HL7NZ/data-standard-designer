@@ -1,0 +1,45 @@
+{
+  "resourceType": "Procedure",
+  "id": "procedurePerformed",
+  "text": {
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Biopsy</div>",
+    "status": "generated"
+  },
+  "status": "completed",
+  "code": {
+    "coding": [
+      {
+        "code": "biopsy",
+        "system": "http://canshare.com/cs",
+        "display": "Biopsy"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/patientLung"
+  },
+  "extension": [
+    {
+      "url": "http://canshare.com/adjacentOrganInvolvement",
+      "extension": [
+        {
+          "url": "involved",
+          "valueBoolean": true
+        },
+        {
+          "url": "notes",
+          "valueString": "Deeply infiltrated into chest wall"
+        }
+      ]
+    },
+    {
+      "url": "http://canshare.com/adjacentOrganInvolvement",
+      "valueString": "Unable to completely remove"
+    }
+  ],
+  "note": [
+    {
+      "text": "Here are other notes"
+    }
+  ]
+}

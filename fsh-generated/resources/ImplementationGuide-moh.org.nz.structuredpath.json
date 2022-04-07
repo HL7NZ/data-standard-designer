@@ -25,144 +25,215 @@
     "resource": [
       {
         "reference": {
-          "reference": "StructureDefinition/AsbestosObservation"
-        },
-        "name": "AsbestosObservation",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "StructureDefinition/lcBundle"
-        },
-        "name": "Lung Cancer bundle",
-        "description": "A bundle containing Lung Cancer resources",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "StructureDefinition/PreviousCancerObservation"
-        },
-        "name": "PreviousCancerObservation",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "StructureDefinition/PreviousCytologyObservation"
-        },
-        "name": "PreviousCytologyObservation",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "StructureDefinition/PreviousTxObservation"
-        },
-        "name": "PreviousTxObservation",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "StructureDefinition/ResectionObservation"
-        },
-        "name": "ResectionObservation",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "StructureDefinition/SmokerObservation"
-        },
-        "name": "SmokerObservation",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "StructureDefinition/LungModel"
-        },
-        "name": "Model for Lung cancer data",
-        "description": "Model for Lung cancer data",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "ValueSet/smoking-status"
+          "reference": "StructureDefinition/observation-ss"
         },
         "name": "Smoking Status",
+        "description": "An observation for smoking status",
         "exampleBoolean": false
       },
       {
         "reference": {
-          "reference": "ValueSet/resection"
+          "reference": "StructureDefinition/sp-servicerequest"
         },
-        "name": "Nature of the resection",
+        "name": "Structured pathology ServiceRequest",
+        "description": "Structured pathology ServiceRequest",
         "exampleBoolean": false
       },
       {
         "reference": {
-          "reference": "ValueSet/site"
+          "reference": "StructureDefinition/approved-by"
         },
-        "name": "Site and laterality",
+        "name": "ApprovedBy",
+        "description": "The practitioner who approved the request",
         "exampleBoolean": false
       },
       {
         "reference": {
-          "reference": "CodeSystem/resection"
+          "reference": "StructureDefinition/completed-by"
         },
-        "name": "Nature of the resection",
+        "name": "CompletedBy",
+        "description": "The practitioner who completed the request",
         "exampleBoolean": false
       },
       {
         "reference": {
-          "reference": "CodeSystem/site"
+          "reference": "StructureDefinition/copy-to"
         },
-        "name": "Smoking Status",
+        "name": "CopyTo",
+        "description": "The practitioner who should receive a copy of the report",
         "exampleBoolean": false
       },
       {
         "reference": {
-          "reference": "CodeSystem/smoking-status"
+          "reference": "StructureDefinition/copy-to-facility"
         },
-        "name": "Smoking Status",
+        "name": "CopyToFacility",
+        "description": "The facility that should receive a copy of the request",
         "exampleBoolean": false
       },
       {
         "reference": {
-          "reference": "Observation/asbestosExposure"
+          "reference": "StructureDefinition/principal-clinician"
         },
-        "name": "asbestosExposure",
+        "name": "PrincipalClinician",
+        "description": "The practitioner who is the principal carer for the patient for this condition",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/requesting-facility"
+        },
+        "name": "RequestingFacility",
+        "description": "The facility that requested the request",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/return-tissue"
+        },
+        "name": "ReturnTissue",
+        "description": "True if the patient has requested return of the tissue",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "BodyStructure/bodyStructureTumour"
+        },
+        "name": "bodyStructureTumour",
         "exampleBoolean": true
       },
       {
         "reference": {
-          "reference": "Practitioner/author1"
+          "reference": "Bundle/lungRequest"
         },
-        "name": "author1",
+        "name": "lungRequest",
+        "description": "A Bundle containing all the base resources for the canshare db after clearing",
         "exampleBoolean": true
       },
       {
         "reference": {
-          "reference": "Procedure/biopsy1"
+          "reference": "Media/mediaImage"
         },
-        "name": "biopsy1",
+        "name": "mediaImage",
         "exampleBoolean": true
       },
       {
         "reference": {
-          "reference": "Bundle/exampleBundle"
+          "reference": "Observation/observationAsbestos"
         },
-        "name": "exampleBundle",
+        "name": "observationAsbestos",
         "exampleBoolean": true
       },
       {
         "reference": {
-          "reference": "Patient/examplePatient"
+          "reference": "Observation/observationCyto"
         },
-        "name": "examplePatient",
+        "name": "observationCyto",
         "exampleBoolean": true
       },
       {
         "reference": {
-          "reference": "Observation/exampleSmoker"
+          "reference": "Observation/observationIndication"
         },
-        "name": "exampleSmoker",
+        "name": "observationIndication",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/observationNeoadjuvent"
+        },
+        "name": "observationNeoadjuvent",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/observationOtherrelevant"
+        },
+        "name": "observationOtherrelevant",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/observationPresenting"
+        },
+        "name": "observationPresenting",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/observationPreviousDx"
+        },
+        "name": "observationPreviousDx",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/observationPreviousTx"
+        },
+        "name": "observationPreviousTx",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/observationRelevantRadiol"
+        },
+        "name": "observationRelevantRadiol",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/observationSS"
+        },
+        "name": "observationSS",
+        "exampleCanonical": "http://hl7.org.nz/fhir/StructureDefinition/spath-observation-ss"
+      },
+      {
+        "reference": {
+          "reference": "Observation/observationVaping"
+        },
+        "name": "observationVaping",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Patient/patientLung"
+        },
+        "name": "patientLung",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Practitioner/practitionerCC"
+        },
+        "name": "practitionerCC",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Practitioner/practitionerPrincipal"
+        },
+        "name": "practitionerPrincipal",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Practitioner/practitionerRequesting"
+        },
+        "name": "practitionerRequesting",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Procedure/procedurePerformed"
+        },
+        "name": "procedurePerformed",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "ServiceRequest/serviceRequestLung"
+        },
+        "name": "serviceRequestLung",
         "exampleBoolean": true
       },
       {
@@ -174,9 +245,9 @@
       },
       {
         "reference": {
-          "reference": "ServiceRequest/sr1"
+          "reference": "Questionnaire/QLungCancer"
         },
-        "name": "sr1",
+        "name": "QLungCancer",
         "exampleBoolean": true
       }
     ],
@@ -189,6 +260,21 @@
           "nameUrl": "index.html",
           "title": "Home",
           "generation": "markdown"
+        },
+        {
+          "nameUrl": "design.html",
+          "title": "Design",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "extensions.html",
+          "title": "Extensions",
+          "generation": "html"
+        },
+        {
+          "nameUrl": "profiles.html",
+          "title": "Profiles",
+          "generation": "html"
         },
         {
           "nameUrl": "workingNotes.html",
