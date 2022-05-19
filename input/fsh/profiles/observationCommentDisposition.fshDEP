@@ -1,0 +1,56 @@
+
+//recording the disposition of a comment
+
+Profile:        ObservationCommentDisposition
+Parent:         Observation
+Id:             observation-comment-disposition
+Title:          "Comment dispositions"
+Description:    "An observation that records the disposition of a comment"
+
+* ^url = "http://hl7.org.nz/fhir/StructureDefinition/canshare-observation-disposition"
+* ^jurisdiction.coding = urn:iso:std:iso:3166#NZ
+
+* ^text.status = #additional
+* ^text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Recording the disposition of a comment</div>"
+
+//fix the code value - todo need a proper value for this
+* code = $canshare#ss (exactly)
+
+//can only be a CodeableConcept
+* value[x] only CodeableConcept
+* valueCodeableConcept from $comment-disposition-vs (required)
+
+//todo - need to slice the component and provide codes for the slices
+
+/* from dispositionCtrl.js
+    obs.component.push({code:{coding:[{code:'comment'}],text:'comment'},valueString:review.answer[0].valueString})
+    obs.component.push({code:{coding:[{code:'reviewer'}],text:'reviewer'},valueString:QR.author.display})
+    obs.component.push({code:{coding:[{code:'authored'}],text:'authored'},valueDateTime:QR.authored})
+    obs.component.push({code:{coding:[{code:'linkId'}],text:'linkId'},valueString:review.linkId})
+
+*/
+
+
+
+
+ValueSet: CommentDisposition
+Id: comment-disposition
+Title: "Disposition of a comment"
+Description: "How a reviewers comment was treated. eg accepted, declined..."
+
+* ^url = $comment-disposition-vs
+* ^jurisdiction.coding = urn:iso:std:iso:3166#NZ
+
+* codes from system $comment-disposition-cs
+
+
+//these will be replaced by the HISO ones...
+CodeSystem: CommentDisposition
+Id: comment-disposition
+Description: "Types of disposition. Will be HISO"
+
+* ^url = $comment-disposition-cs
+
+* #accept "Accept the change"
+* #mod "Accept with some modification"
+* #decline "Decline to change"

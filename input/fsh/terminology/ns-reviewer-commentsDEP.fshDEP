@@ -1,0 +1,18 @@
+Instance: canshare-reviewer-comments
+InstanceOf: NamingSystem
+Usage: #definition
+
+* jurisdiction = urn:iso:std:iso:3166#NZ
+
+* name = "ReviewerComments"
+* description = "Comments made by a reviewer in the form"
+* status = #active
+* kind = #codesystem
+* date = "2022-04-15"
+* responsible = "Canshare"
+
+* uniqueId.type = #uri
+* uniqueId.value = "http://canshare.com/cs/review-comment"
+* uniqueId.preferred = true
+
+

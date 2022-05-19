@@ -1,0 +1,27 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "ReviewerCommentType",
+  "id": "reviewer-comment-type",
+  "title": "Comment types entered by a reviewer",
+  "description": "Identifies which data elements in a QR are reviewer comments rather than data .",
+  "version": "0.1.0",
+  "url": "http://clinfhir.com/ValueSet/review-comment",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "NZ",
+          "system": "urn:iso:std:iso:3166"
+        }
+      ]
+    }
+  ],
+  "compose": {
+    "include": [
+      {
+        "system": "http://clinfhir.com/cs/review-comment"
+      }
+    ]
+  }
+}

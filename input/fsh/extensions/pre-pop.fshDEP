@@ -1,0 +1,15 @@
+Extension: Prepop
+Id: pre-pop
+Description: "Pre-population instructions"
+
+
+* ^url = $pre-pop
+* ^jurisdiction.coding = urn:iso:std:iso:3166#NZ
+
+* ^status = #draft
+
+* ^context.type = #element
+* ^context.expression = "Questionnaire"
+
+* value[x] only string
+

@@ -1,0 +1,239 @@
+{
+  "resourceType": "ImplementationGuide",
+  "id": "fhir.org.nz.ig.structuredpath",
+  "url": "http://fhir.org.nz/ig/structuredpath/ImplementationGuide/fhir.org.nz.ig.structuredpath",
+  "version": "0.1.0",
+  "name": "structuredpathology",
+  "title": "Structured Pathology Implementation Guide",
+  "status": "draft",
+  "publisher": "David Hay",
+  "contact": [
+    {
+      "name": "David Hay",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://example.org/example-publisher"
+        }
+      ]
+    }
+  ],
+  "packageId": "fhir.org.nz.ig.structuredpath",
+  "fhirVersion": [
+    "4.0.1"
+  ],
+  "definition": {
+    "resource": [
+      {
+        "reference": {
+          "reference": "StructureDefinition/cs-questionnaire"
+        },
+        "name": "Questionnaire used in Data Standard",
+        "description": "The elements and extensions used by the Data Standard tooling",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/attachment"
+        },
+        "name": "Attachment",
+        "description": "Allows attachments to be associated with a Questionnaire",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/can-publish-reviewer"
+        },
+        "name": "CanPublishReviewer",
+        "description": "If true, the identity of the reviewer can be published",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/can-publish-reviewer-oia"
+        },
+        "name": "CanPublishReviewerOia",
+        "description": "If true, the identity of the reviewer can be included in an OIA (Official Information Act) request",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/column"
+        },
+        "name": "Column",
+        "description": "The column in the form where the item should be displayed",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/column-count"
+        },
+        "name": "ColumnCount",
+        "description": "The number of columns in a group item",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/extract-notes"
+        },
+        "name": "ExtractNotes",
+        "description": "Notes on extracting item contents into FHIR resources by the Forms Receiver",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/hiso-class"
+        },
+        "name": "HisoClass",
+        "description": "The class of the data item, as defined by HISO",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/hiso-dt"
+        },
+        "name": "HisoDt",
+        "description": "The data type of the item, as defined by HISO",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/hiso-layout"
+        },
+        "name": "HisoLayout",
+        "description": "The item layout, as defined by HISO",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/hiso-length"
+        },
+        "name": "HisoLength",
+        "description": "The length of the data item, as defined by HISO",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/item-description"
+        },
+        "name": "ItemDescription",
+        "description": "Description of the item, to be displayed to the user",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/notes"
+        },
+        "name": "Notes",
+        "description": "Notes about validation rules for this element",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/source-standard"
+        },
+        "name": "SourceStandard",
+        "description": "Source standards from which an item was derived",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/usage-notes"
+        },
+        "name": "UsageNotes",
+        "description": "General notes on the usage of a data item.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/verification"
+        },
+        "name": "Verification",
+        "description": "Notes about validation rules for this element",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/reviewer-comment-type"
+        },
+        "name": "Comment types entered by a reviewer",
+        "description": "Identifies which data elements in a QR are reviewer comments rather than data .",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/reviewer-comment-type"
+        },
+        "name": "ReviewerComments",
+        "description": "Codes to identify what tupe of comment - eg on the clinical section in the form",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "Questionnaire/QLungCancer"
+        },
+        "name": "QLungCancer",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Questionnaire/lung-request"
+        },
+        "name": "lung-request",
+        "exampleBoolean": true
+      }
+    ],
+    "page": {
+      "nameUrl": "toc.html",
+      "title": "Table of Contents",
+      "generation": "html",
+      "page": [
+        {
+          "nameUrl": "index.html",
+          "title": "Home",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "design.html",
+          "title": "Design",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "extensions.html",
+          "title": "Extensions",
+          "generation": "html"
+        },
+        {
+          "nameUrl": "profiles.html",
+          "title": "Profiles",
+          "generation": "html"
+        },
+        {
+          "nameUrl": "reviewer.html",
+          "title": "Reviewer",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "terminology.html",
+          "title": "Terminology",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "workingNotes.html",
+          "title": "Working Notes",
+          "generation": "markdown"
+        }
+      ]
+    },
+    "parameter": [
+      {
+        "code": "copyrightyear",
+        "value": "2021+"
+      },
+      {
+        "code": "releaselabel",
+        "value": "ci-build"
+      }
+    ]
+  }
+}

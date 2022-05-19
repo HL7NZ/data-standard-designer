@@ -4,14 +4,9 @@
 <table class='table table-bordered table-hover table-sm'>
 <tr><th>Id</th><th>Url</th><th>Description</th></tr>
 <tr>
-<td><a href='StructureDefinition-observation-ss.html'>observation-ss</a></td>
+<td><a href='StructureDefinition-cs-questionnaire.html'>cs-questionnaire</a></td>
 <td>http://hl7.org.nz/fhir/StructureDefinition/spath-observation-ss</td>
-<td><p>An observation for smoking status</p></td>
-</tr>
-<tr>
-<td><a href='StructureDefinition-sp-servicerequest.html'>sp-servicerequest</a></td>
-<td>http://hl7.org.nz/fhir/StructureDefinition/SpServiceRequest</td>
-<td><p>Structured pathology ServiceRequest</p></td>
+<td><p>The elements and extensions used by the Data Standard tooling</p></td>
 </tr>
 </table>
 </div>

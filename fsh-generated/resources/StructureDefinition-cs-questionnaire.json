@@ -1,0 +1,354 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "cs-questionnaire",
+  "text": {
+    "status": "additional",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Questionnaire profile</div>"
+  },
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
+      "valueString": "Specialized.Definitional Artifacts"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-security-category",
+      "valueCode": "business"
+    }
+  ],
+  "url": "http://hl7.org.nz/fhir/StructureDefinition/spath-observation-ss",
+  "version": "0.1.0",
+  "name": "CsQuestionnaire",
+  "title": "Questionnaire used in Data Standard",
+  "status": "active",
+  "description": "The elements and extensions used by the Data Standard tooling",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "NZ",
+          "system": "urn:iso:std:iso:3166"
+        }
+      ]
+    }
+  ],
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "workflow",
+      "uri": "http://hl7.org/fhir/workflow",
+      "name": "Workflow Pattern"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    },
+    {
+      "identity": "objimpl",
+      "uri": "http://hl7.org/fhir/object-implementation",
+      "name": "Object Implementation Information"
+    },
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2 Mapping"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "Questionnaire",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Questionnaire",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Questionnaire.extension",
+        "path": "Questionnaire.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Questionnaire.extension:can-publish-reviewer",
+        "path": "Questionnaire.extension",
+        "sliceName": "can-publish-reviewer",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://clinfhir.com/fhir/StructureDefinition/canshare-questionnaireresponse-can-publish-reviewer"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Questionnaire.extension:can-publish-reviewer-oia",
+        "path": "Questionnaire.extension",
+        "sliceName": "can-publish-reviewer-oia",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://clinfhir.com/fhir/StructureDefinition/canshare-questionnaireresponse-can-publish-reviewer-oia"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Questionnaire.extension:attachment",
+        "path": "Questionnaire.extension",
+        "sliceName": "attachment",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://clinfhir.com/fhir/StructureDefinition/canshare-questionnaire-attachment"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Questionnaire.modifierExtension",
+        "path": "Questionnaire.modifierExtension",
+        "max": "0"
+      },
+      {
+        "id": "Questionnaire.derivedFrom",
+        "path": "Questionnaire.derivedFrom",
+        "max": "0"
+      },
+      {
+        "id": "Questionnaire.experimental",
+        "path": "Questionnaire.experimental",
+        "max": "0"
+      },
+      {
+        "id": "Questionnaire.subjectType",
+        "path": "Questionnaire.subjectType",
+        "max": "0"
+      },
+      {
+        "id": "Questionnaire.useContext",
+        "path": "Questionnaire.useContext",
+        "max": "0"
+      },
+      {
+        "id": "Questionnaire.jurisdiction",
+        "path": "Questionnaire.jurisdiction",
+        "max": "0"
+      },
+      {
+        "id": "Questionnaire.item.extension",
+        "path": "Questionnaire.item.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Questionnaire.item.extension:extract-notes",
+        "path": "Questionnaire.item.extension",
+        "sliceName": "extract-notes",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://clinfhir.com/fhir/StructureDefinition/canshare-questionnaire-extractNotes"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Questionnaire.item.extension:usage-notes",
+        "path": "Questionnaire.item.extension",
+        "sliceName": "usage-notes",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://clinfhir.com/fhir/StructureDefinition/canshare-questionnaire-usageNotes"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Questionnaire.item.extension:verification",
+        "path": "Questionnaire.item.extension",
+        "sliceName": "verification",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://clinfhir.com/fhir/StructureDefinition/canshare-questionnaire-verification"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Questionnaire.item.extension:notes",
+        "path": "Questionnaire.item.extension",
+        "sliceName": "notes",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://clinfhir.com/fhir/StructureDefinition/canshare-questionnaire-notes"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Questionnaire.item.extension:source-standard",
+        "path": "Questionnaire.item.extension",
+        "sliceName": "source-standard",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://clinfhir.com/fhir/StructureDefinition/canshare-questionnaire-sourceStandard"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Questionnaire.item.extension:hiso-class",
+        "path": "Questionnaire.item.extension",
+        "sliceName": "hiso-class",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://clinfhir.com/fhir/StructureDefinition/canshare-questionnaire-hiso-class"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Questionnaire.item.extension:hiso-length",
+        "path": "Questionnaire.item.extension",
+        "sliceName": "hiso-length",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://clinfhir.com/fhir/StructureDefinition/canshare-questionnaire-hiso-length"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Questionnaire.item.extension:hiso-dt",
+        "path": "Questionnaire.item.extension",
+        "sliceName": "hiso-dt",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://clinfhir.com/fhir/StructureDefinition/canshare-questionnaire-hiso-dt"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Questionnaire.item.extension:hiso-layout",
+        "path": "Questionnaire.item.extension",
+        "sliceName": "hiso-layout",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://clinfhir.com/fhir/StructureDefinition/canshare-questionnaire-hiso-layout"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Questionnaire.item.extension:column",
+        "path": "Questionnaire.item.extension",
+        "sliceName": "column",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://clinfhir.com/fhir/StructureDefinition/canshare-questionnaire-column"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Questionnaire.item.extension:column-count",
+        "path": "Questionnaire.item.extension",
+        "sliceName": "column-count",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://clinfhir.com/fhir/StructureDefinition/canshare-questionnaire-column-count"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Questionnaire.item.extension:item-description",
+        "path": "Questionnaire.item.extension",
+        "sliceName": "item-description",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://clinfhir.comhir/StructureDefinition/canshare-questionnaire-item-description"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -2,9 +2,10 @@
 # │  The properties below are used to create the ImplementationGuide resource. For a list of       │
 # │  supported properties, see: https://fshschool.org/docs/sushi/configuration/                    │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
-id: moh.org.nz.structuredpath
-canonical: http://example.org
-name: structuredPath
+id: fhir.org.nz.ig.structuredpath
+canonical: http://fhir.org.nz/ig/structuredpath
+name: structuredpathology
+title: Structured Pathology Implementation Guide
 status: draft
 version: 0.1.0
 fhirVersion: 4.0.1
@@ -21,6 +22,7 @@ menu:
   Home: index.html
   Extensions: extensions.html
   Profiles: profiles.html
+  Terminology: terminology.html
   Artifacts: artifacts.html
  
 
