@@ -1,0 +1,24 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "CanshareOE",
+  "id": "canshare-oe",
+  "title": "Observable Entity hierarchy",
+  "description": "Observable Entity hierarchy",
+  "version": "0.1.0",
+  "url": "http://fhir.org.nz/ig/datastandarddesigner/ValueSet/canshare-oe",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "filter": [
+          {
+            "property": "concept",
+            "op": "is-a",
+            "value": "363787002"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,10 +1,10 @@
 {
   "resourceType": "ImplementationGuide",
-  "id": "fhir.org.nz.ig.structuredpath",
-  "url": "http://fhir.org.nz/ig/structuredpath/ImplementationGuide/fhir.org.nz.ig.structuredpath",
+  "id": "fhir.org.nz.ig.datastandarddesigner",
+  "url": "http://fhir.org.nz/ig/datastandarddesigner/ImplementationGuide/fhir.org.nz.ig.datastandarddesigner",
   "version": "0.1.0",
   "name": "structuredpathology",
-  "title": "Structured Pathology Implementation Guide",
+  "title": "Data Standard designer Implementation Guide",
   "status": "draft",
   "publisher": "David Hay",
   "contact": [
@@ -18,7 +18,7 @@
       ]
     }
   ],
-  "packageId": "fhir.org.nz.ig.structuredpath",
+  "packageId": "fhir.org.nz.ig.datastandarddesigner",
   "fhirVersion": [
     "4.0.1"
   ],
@@ -150,6 +150,14 @@
         },
         "name": "Verification",
         "description": "Notes about validation rules for this element",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/canshare-oe"
+        },
+        "name": "Observable Entity hierarchy",
+        "description": "Observable Entity hierarchy",
         "exampleBoolean": false
       },
       {

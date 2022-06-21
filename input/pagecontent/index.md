@@ -13,7 +13,7 @@ Note that the standards developed during this process describe the data elements
 
 #### Tooling
 
-Custom tooling has been developed to build and present the Data Standards. There is a publically available [launch page](http.canshare.clinfhir.com) for the tooling. This has lists of the standards under development and approved, with various representations of the standard, including an example User Interface form generated from the standard. 
+Custom tooling has been developed to build and present the Data Standards. There is a publically available [launch page](http://canshare.clinfhir.com) for the tooling. This has lists of the standards under development and approved, with various representations of the standard, including an example User Interface form generated from the standard. 
 
 This form can also be used to collect user feedback on the form contents which is collated by the tooling and reviewed by the authors. The feedback and disposition is also displayed for each standard.
 
@@ -38,7 +38,7 @@ From this representation, other summaries can be generated for different purpose
 
 Note that it is not required to use the Questionnaire for rendering - an application can use the information within it and use it's own mechanisms to render the form. This is explored in a bit more detail in [this post](https://fhirblog.com/2022/01/31/fhir-forms-theory-and-background/).
 
-The Data Standards currently available are listed on [this page](http.canshare.clinfhir.com)
+The Data Standards currently available are listed on [this page](http://canshare.clinfhir.com)
 
 *Question: Do we also wish to include the Q for each standard in the IG? It does mean a manual update process when a standard is approved*
 
