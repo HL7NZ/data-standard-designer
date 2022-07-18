@@ -4,7 +4,7 @@
   "url": "http://fhir.org.nz/ig/datastandarddesigner/ImplementationGuide/fhir.org.nz.ig.datastandarddesigner",
   "version": "0.1.0",
   "name": "structuredpathology",
-  "title": "Data Standard designer Implementation Guide",
+  "title": "CanShare Data Standard designer",
   "status": "draft",
   "publisher": "David Hay",
   "contact": [

@@ -14,11 +14,11 @@ if [[ $? -eq 0 ]]
 then
 
 echo "Creating Profiles and extensions summary pages..."
-../scripts/makeProfilesAndExtensions.js structuredpath
+../scripts/makeProfilesAndExtensions.js cs-dataStandardDesigner
 echo
 
 echo "Making terminology summary"   # will copy into IG input folder
-../scripts/makeTerminologySummary.js structuredpath
+../scripts/makeTerminologySummary.js cs-dataStandardDesigner
 
 echo "Not doing anything else right now"
 

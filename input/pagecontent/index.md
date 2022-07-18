@@ -1,4 +1,4 @@
-### Structured pathology IG
+### Data Standard Designer
 
 
 #### Introduction
@@ -7,9 +7,15 @@ The Structured Pathology workstream within the CanShare programme of work involv
 To facilitate the process of creating those Data Standard models, and especially the review process around them, tooling was created to help create the models, generate a sample User Interface through which the models could be viewed as a form. In addition, there are functions developed to capture reviewer comments and record their disposition by the Data Standard developers
 
 #### Target audience
-This guide is aimed at an implementer wishing to develop solutions that are compliant with the data standards.
+This guide documents the artifacts used by the designer including:
 
-Note that the standards developed during this process describe the data elements within the standard - not the mechanism by which information can be exchanged between systems. Many, but not all, of the data elements are coded with a SNOMED code - this is a work in progress.
+* The profile on the Questionnaire resource which contains definition of a single standard
+* Extension definitions for the extensions used
+* Some terminology artifacts (CodeSystem, ValueSets) for custom terminology
+
+Note that the standards developed during this process describe the data elements within the standard - not the mechanism by which information can be exchanged between systems (This is described in the StructuredPathology guide). 
+
+Many, but not all, of the data elements are coded with a SNOMED code - this is a work in progress.
 
 #### Tooling
 

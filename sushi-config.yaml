@@ -5,7 +5,7 @@
 id: fhir.org.nz.ig.datastandarddesigner
 canonical: http://fhir.org.nz/ig/datastandarddesigner
 name: structuredpathology
-title: Data Standard designer Implementation Guide
+title: CanShare Data Standard designer 
 status: draft
 version: 0.1.0
 fhirVersion: 4.0.1

@@ -12,7 +12,7 @@ The [FHIR spec](http://hl7.org/fhir/terminology-module.html) has much more detai
 <table class='table table-bordered table-condensed'>
 <tr><th>ValueSet</th><th>Purpose</th><th>Canonical url</th></tr>
 <tr><td width='20%'>Comment types entered by a reviewer</td><td><p>Identifies which data elements in a QR are reviewer comments rather than data .</p></td><td><a href='ValueSet-reviewer-comment-type.html'>http://clinfhir.com/ValueSet/review-comment</a></td></tr>
-<tr><td width='20%'>Observable Entity hierarchy</td><td><p>Observable Entity hierarchy</p></td><td><a href='ValueSet-canshare-oe.html'>http://fhir.org.nz/ig/structuredpath/ValueSet/canshare-oe</a></td></tr>
+<tr><td width='20%'>Observable Entity hierarchy</td><td><p>Observable Entity hierarchy</p></td><td><a href='ValueSet-canshare-oe.html'>http://fhir.org.nz/ig/datastandarddesigner/ValueSet/canshare-oe</a></td></tr>
 </table>
 <br/><br/>
 ### CodeSystems
