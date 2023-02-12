@@ -1,0 +1,103 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "SimpleRequest1",
+  "url": "http://canshare.co.nz/fhir/Questionnaire/simplerequest1",
+  "status": "draft",
+  "title": "Biopsy",
+  "useContext": [
+    {
+      "code": {
+        "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+        "code": "focus"
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "request",
+            "system": "http://canshare.co.nz/CodeSystem/Qtypes"
+          }
+        ]
+      }
+    }
+  ],
+  "item": [
+    {
+      "linkId": "site",
+      "text": "Site",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "lat",
+          "text": "Breast laterality",
+          "type": "choice",
+          "code": [
+            {
+              "system": "http://canshare.co.nz/CodeSystem/SP",
+              "code": "lat"
+            }
+          ],
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "left",
+                "system": "http://canshare.co.nz/CodeSystem/SP",
+                "display": "Left"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "right",
+                "system": "http://canshare.co.nz/CodeSystem/SP",
+                "display": "Right"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "quad",
+          "text": "Quadrant",
+          "type": "string",
+          "code": [
+            {
+              "system": "http://canshare.co.nz/CodeSystem/SP",
+              "code": "quad"
+            }
+          ]
+        },
+        {
+          "linkId": "orient",
+          "text": "Orientation (oclock)",
+          "type": "string",
+          "code": [
+            {
+              "system": "http://canshare.co.nz/CodeSystem/SP",
+              "code": "orient"
+            }
+          ]
+        },
+        {
+          "linkId": "dist",
+          "text": "Distance from nipple",
+          "type": "string",
+          "code": [
+            {
+              "system": "http://canshare.co.nz/CodeSystem/SP",
+              "code": "dist"
+            }
+          ]
+        },
+        {
+          "linkId": "notes",
+          "text": "Any other noted",
+          "type": "text",
+          "code": [
+            {
+              "system": "http://canshare.co.nz/CodeSystem/SP",
+              "code": "notes"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "resourceType": "Patient",
+  "id": "Patient2",
+  "identifier": [
+    {
+      "system": "https://standards.digital.health.nz/ns/nhi-id",
+      "value": "WER4566"
+    }
+  ],
+  "name": [
+    {
+      "given": [
+        "Peter"
+      ],
+      "family": "Parker",
+      "text": "Peter Parker"
+    }
+  ],
+  "birthDate": "1997-01-09",
+  "gender": "male"
+}

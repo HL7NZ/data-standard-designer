@@ -1,0 +1,21 @@
+{
+  "resourceType": "Patient",
+  "id": "Patient1",
+  "identifier": [
+    {
+      "system": "https://standards.digital.health.nz/ns/nhi-id",
+      "value": "ABC1234"
+    }
+  ],
+  "name": [
+    {
+      "given": [
+        "Jason"
+      ],
+      "family": "Bourne",
+      "text": "Jason Bourne"
+    }
+  ],
+  "birthDate": "1992-09-03",
+  "gender": "male"
+}

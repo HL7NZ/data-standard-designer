@@ -1,0 +1,56 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "SimpleReport",
+  "url": "http://canshare.co.nz/fhir/Questionnaire/simplereport",
+  "status": "draft",
+  "title": "Histology report form",
+  "useContext": [
+    {
+      "code": {
+        "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+        "code": "focus"
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "report",
+            "system": "http://canshare.co.nz/CodeSystem/Qtypes"
+          }
+        ]
+      }
+    }
+  ],
+  "item": [
+    {
+      "linkId": "report",
+      "text": "Report",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "histology",
+          "text": "Histology notes",
+          "type": "text",
+          "code": [
+            {
+              "system": "http://canshare.co.nz/CodeSystem/SP",
+              "code": "histo",
+              "display": "Histology"
+            }
+          ]
+        },
+        {
+          "linkId": "notes",
+          "text": "Other notes",
+          "type": "text",
+          "code": [
+            {
+              "system": "http://canshare.co.nz/CodeSystem/SP",
+              "code": "other",
+              "display": "Other notes"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

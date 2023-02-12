@@ -178,6 +178,70 @@
       },
       {
         "reference": {
+          "reference": "Patient/Patient1"
+        },
+        "name": "Patient1",
+        "description": "A sample patient  for testing the POC",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Patient/Patient2"
+        },
+        "name": "Patient2",
+        "description": "A sample patient  for testing the POC",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Patient/Patient3"
+        },
+        "name": "Patient3",
+        "description": "A sample patient  for testing the POC",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Questionnaire/SimpleReport"
+        },
+        "name": "SimpleReport",
+        "description": "A simple report for testing the POC",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Questionnaire/SimpleReport1"
+        },
+        "name": "SimpleReport1",
+        "description": "A simple report for testing the POC",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Questionnaire/SimpleRequest"
+        },
+        "name": "SimpleRequest",
+        "description": "A simple request for testing the POC",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Questionnaire/SimpleRequest1"
+        },
+        "name": "SimpleRequest1",
+        "description": "A simple request for testing the POC",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Questionnaire/insituReport"
+        },
+        "name": "insituReport",
+        "description": "The tempale for in-situ reporting",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
           "reference": "Questionnaire/QLungCancer"
         },
         "name": "QLungCancer",

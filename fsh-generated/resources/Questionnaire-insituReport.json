@@ -1,0 +1,131 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "insituReport",
+  "url": "http://canshare.co.nz/fhir/Questionnaire/insitu-report",
+  "status": "draft",
+  "title": "Insitu report form",
+  "useContext": [
+    {
+      "code": {
+        "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+        "code": "focus"
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "report",
+            "system": "http://canshare.co.nz/CodeSystem/Qtypes"
+          }
+        ]
+      }
+    }
+  ],
+  "item": [
+    {
+      "linkId": "dcis",
+      "text": "DCIS",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "ap",
+          "text": "Anterior to Posterior",
+          "type": "integer",
+          "code": [
+            {
+              "system": "http://canshare.co.nz/CodeSystem/SP",
+              "code": "ap",
+              "display": "AP"
+            }
+          ]
+        },
+        {
+          "linkId": "si",
+          "text": "Superior to Inferior",
+          "type": "integer",
+          "code": [
+            {
+              "system": "http://canshare.co.nz/CodeSystem/SP",
+              "code": "si",
+              "display": "SI"
+            }
+          ]
+        },
+        {
+          "linkId": "ml",
+          "text": "Medial to lateral",
+          "type": "integer",
+          "code": [
+            {
+              "system": "http://canshare.co.nz/CodeSystem/SP",
+              "code": "ml",
+              "display": "ML"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "arch1",
+      "text": "Architecture",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "arch",
+          "text": "Architecture",
+          "type": "choice",
+          "code": [
+            {
+              "system": "http://canshare.co.nz/CodeSystem/SP",
+              "code": "arch",
+              "display": "Architecture"
+            }
+          ],
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "crib",
+                "system": "http://canshare.co.nz/CodeSystem/SP",
+                "display": "Cribriform"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "micro",
+                "system": "http://canshare.co.nz/CodeSystem/SP",
+                "display": "Micropapillary"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "pap",
+                "system": "http://canshare.co.nz/CodeSystem/SP",
+                "display": "Papillary"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "solid",
+                "system": "http://canshare.co.nz/CodeSystem/SP",
+                "display": "Solid"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "mixed",
+                "system": "http://canshare.co.nz/CodeSystem/SP",
+                "display": "Mixed"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "other",
+                "system": "http://canshare.co.nz/CodeSystem/SP",
+                "display": "Other"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -11,8 +11,8 @@ The [FHIR spec](http://hl7.org/fhir/terminology-module.html) has much more detai
 
 <table class='table table-bordered table-condensed'>
 <tr><th>ValueSet</th><th>Purpose</th><th>Canonical url</th></tr>
-<tr><td width='20%'>Comment types entered by a reviewer</td><td><p>Identifies which data elements in a QR are reviewer comments rather than data .</p></td><td><a href='ValueSet-reviewer-comment-type.html'>http://clinfhir.com/ValueSet/review-comment</a></td></tr>
-<tr><td width='20%'>Observable Entity hierarchy</td><td><p>Observable Entity hierarchy</p></td><td><a href='ValueSet-canshare-oe.html'>http://fhir.org.nz/ig/datastandarddesigner/ValueSet/canshare-oe</a></td></tr>
+<tr><td width='20%'><a href='ValueSet-canshare-oe.html'>Observable Entity hierarchy</a></td><td><p>Observable Entity hierarchy</p></td><td>http://fhir.org.nz/ig/datastandarddesigner/ValueSet/canshare-oe</td></tr>
+<tr><td width='20%'><a href='ValueSet-reviewer-comment-type.html'>Comment types entered by a reviewer</a></td><td><p>Identifies which data elements in a QR are reviewer comments rather than data .</p></td><td>http://clinfhir.com/ValueSet/review-comment</td></tr>
 </table>
 <br/><br/>
 ### CodeSystems
@@ -25,5 +25,5 @@ The [FHIR spec](http://hl7.org/fhir/terminology-module.html) has much more detai
 
 <table class='table table-bordered table-condensed'>
 <tr><th>CodeSystem</th><th>Purpose</th><th>Canonical Url</th></tr>
-<tr><td width='20%'>undefined</td><td><p>Codes to identify what tupe of comment - eg on the clinical section in the form</p></td><td><a href='CodeSystem-reviewer-comment-type.html'>http://clinfhir.com/cs/review-comment</a></td></tr>
+<tr><td width='20%'><a href='CodeSystem-reviewer-comment-type.html'>undefined</a></td><td><p>Codes to identify what tupe of comment - eg on the clinical section in the form</p></td><td>http://clinfhir.com/cs/review-comment</td></tr>
 </table>

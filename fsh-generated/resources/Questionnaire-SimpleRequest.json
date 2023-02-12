@@ -1,0 +1,54 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "SimpleRequest",
+  "url": "http://canshare.co.nz/fhir/Questionnaire/simplerequest",
+  "status": "draft",
+  "title": "Breast resection request form",
+  "useContext": [
+    {
+      "code": {
+        "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+        "code": "focus"
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "request",
+            "system": "http://canshare.co.nz/CodeSystem/Qtypes"
+          }
+        ]
+      }
+    }
+  ],
+  "item": [
+    {
+      "linkId": "findings",
+      "text": "Findings",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "location",
+          "text": "Location of tumour",
+          "type": "text",
+          "code": [
+            {
+              "system": "http://canshare.co.nz/CodeSystem/SP",
+              "code": "location"
+            }
+          ]
+        },
+        {
+          "linkId": "nodes",
+          "text": "Involvement of nodes",
+          "type": "text",
+          "code": [
+            {
+              "system": "http://canshare.co.nz/CodeSystem/SP",
+              "code": "nodes"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

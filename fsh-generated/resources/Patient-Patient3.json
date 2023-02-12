@@ -1,0 +1,21 @@
+{
+  "resourceType": "Patient",
+  "id": "Patient3",
+  "identifier": [
+    {
+      "system": "https://standards.digital.health.nz/ns/nhi-id",
+      "value": "XXX6535"
+    }
+  ],
+  "name": [
+    {
+      "given": [
+        "Wonder"
+      ],
+      "family": "Woman",
+      "text": "Wonder Woman"
+    }
+  ],
+  "birthDate": "1987-05-12",
+  "gender": "female"
+}
