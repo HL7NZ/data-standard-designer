@@ -1,6 +1,10 @@
 {
   "resourceType": "Patient",
   "id": "Patient3",
+  "text": {
+    "status": "generated",
+    "div": "<div>Wonder Womany</div>"
+  },
   "identifier": [
     {
       "system": "https://standards.digital.health.nz/ns/nhi-id",

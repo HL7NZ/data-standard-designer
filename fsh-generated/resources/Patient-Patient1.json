@@ -1,6 +1,10 @@
 {
   "resourceType": "Patient",
   "id": "Patient1",
+  "text": {
+    "status": "generated",
+    "div": "<div>Mustang Sally</div>"
+  },
   "identifier": [
     {
       "system": "https://standards.digital.health.nz/ns/nhi-id",
@@ -10,12 +14,12 @@
   "name": [
     {
       "given": [
-        "Jason"
+        "Mustang"
       ],
-      "family": "Bourne",
-      "text": "Jason Bourne"
+      "family": "Sally",
+      "text": "Mustang Sally"
     }
   ],
   "birthDate": "1992-09-03",
-  "gender": "male"
+  "gender": "female"
 }

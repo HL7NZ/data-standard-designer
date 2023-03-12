@@ -3,6 +3,12 @@
   "id": "SimpleRequest",
   "url": "http://canshare.co.nz/fhir/Questionnaire/simplerequest",
   "status": "draft",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemExtractionContext",
+      "valueCode": "Procedure"
+    }
+  ],
   "title": "Breast resection request form",
   "useContext": [
     {
@@ -22,12 +28,147 @@
   ],
   "item": [
     {
+      "linkId": "admin",
+      "text": "Administrative",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "pho",
+          "text": "PHO",
+          "type": "choice",
+          "code": [
+            {
+              "system": "http://canshare.co.nz/CodeSystem/SP",
+              "code": "pho"
+            }
+          ],
+          "answerValueSet": "https://nzhts.digital.health.nz/fhir/ValueSet/pho-code"
+        }
+      ]
+    },
+    {
+      "linkId": "procedure",
+      "text": "Procedure",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "procGroup1",
+          "text": "Procedure performed",
+          "type": "group",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemExtractionContext",
+              "valueCode": "Procedure"
+            }
+          ],
+          "item": [
+            {
+              "linkId": "procedurecode",
+              "text": "Procedure",
+              "type": "choice",
+              "definition": "http://hl7.org/fhir/Procedure#Procedure.code",
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "code1",
+                    "system": "http://mycode",
+                    "display": "Biopsy"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "code2",
+                    "system": "http://mycode",
+                    "display": "Resection"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "procGroup2",
+          "text": "Lymph Node biopsy",
+          "type": "group",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemExtractionContext",
+              "valueCode": "Procedure"
+            }
+          ],
+          "item": [
+            {
+              "linkId": "procedurecode1",
+              "text": "Was a lymph node biopsy performed",
+              "type": "boolean",
+              "code": [
+                {
+                  "code": "code3",
+                  "system": "http://mycode",
+                  "display": "Lymph node biopsy"
+                }
+              ],
+              "definition": "http://hl7.org/fhir/Procedure.code"
+            }
+          ]
+        },
+        {
+          "linkId": "procGroup3",
+          "text": "Was a reconstruction done",
+          "type": "group",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemExtractionContext",
+              "valueCode": "Procedure"
+            }
+          ],
+          "item": [
+            {
+              "linkId": "breast-reconstruction",
+              "text": "Was a breast reconstruction performed",
+              "type": "choice",
+              "code": [
+                {
+                  "code": "code3",
+                  "system": "http://mycode",
+                  "display": "Lymph node biopsy"
+                }
+              ],
+              "definition": "http://hl7.org/fhir/Procedure.code",
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "yes",
+                    "system": "http://canshare.co.nz/CodeSystem/SP",
+                    "display": "Yes"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "No",
+                    "system": "http://canshare.co.nz/CodeSystem/SP",
+                    "display": "No"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "linkId": "findings",
       "text": "Findings",
       "type": "group",
       "item": [
         {
           "linkId": "location",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationExtract",
+              "valueBoolean": true
+            }
+          ],
           "text": "Location of tumour",
           "type": "text",
           "code": [
@@ -39,6 +180,12 @@
         },
         {
           "linkId": "nodes",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationExtract",
+              "valueBoolean": true
+            }
+          ],
           "text": "Involvement of nodes",
           "type": "text",
           "code": [

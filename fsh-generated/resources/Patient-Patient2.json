@@ -1,6 +1,10 @@
 {
   "resourceType": "Patient",
   "id": "Patient2",
+  "text": {
+    "status": "generated",
+    "div": "<div>Norma Jean</div>"
+  },
   "identifier": [
     {
       "system": "https://standards.digital.health.nz/ns/nhi-id",
@@ -10,12 +14,12 @@
   "name": [
     {
       "given": [
-        "Peter"
+        "Norma"
       ],
-      "family": "Parker",
-      "text": "Peter Parker"
+      "family": "Jean",
+      "text": "Norma Jean"
     }
   ],
   "birthDate": "1997-01-09",
-  "gender": "male"
+  "gender": "female"
 }
