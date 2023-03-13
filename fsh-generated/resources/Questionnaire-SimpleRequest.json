@@ -88,7 +88,7 @@
         },
         {
           "linkId": "procGroup2",
-          "text": "Lymph Node biopsy",
+          "text": "Lymph Node biopsy question. Uses boolean to create procedure",
           "type": "group",
           "extension": [
             {
@@ -99,22 +99,45 @@
           "item": [
             {
               "linkId": "procedurecode1",
-              "text": "Was a lymph node biopsy performed",
-              "type": "boolean",
-              "code": [
+              "text": "Lymph node biopsy code",
+              "type": "choice",
+              "definition": "http://hl7.org/fhir/Procedure#Procedure.code",
+              "initial": [
                 {
-                  "code": "code3",
-                  "system": "http://mycode",
-                  "display": "Lymph node biopsy"
+                  "valueCoding": {
+                    "code": "code3",
+                    "system": "http://mycode",
+                    "display": "Lymph node biopsy"
+                  }
                 }
               ],
-              "definition": "http://hl7.org/fhir/Procedure.code"
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "code3",
+                    "system": "http://mycode",
+                    "display": "Lymph node biopsy"
+                  }
+                }
+              ],
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                  "valueBoolean": true
+                }
+              ]
+            },
+            {
+              "linkId": "procedurestatus1",
+              "text": "Was a lymph node biopsy performed",
+              "type": "boolean",
+              "definition": "http://hl7.org/fhir/Procedure#Procedure.status"
             }
           ]
         },
         {
           "linkId": "procGroup3",
-          "text": "Was a reconstruction done",
+          "text": "Was a reconstruction done. uses coding as the answer",
           "type": "group",
           "extension": [
             {
@@ -127,27 +150,41 @@
               "linkId": "breast-reconstruction",
               "text": "Was a breast reconstruction performed",
               "type": "choice",
-              "code": [
+              "definition": "http://hl7.org/fhir/Procedure#Procedure.code",
+              "initial": [
                 {
-                  "code": "code3",
-                  "system": "http://mycode",
-                  "display": "Lymph node biopsy"
+                  "valueCoding": {
+                    "code": "recon",
+                    "system": "http://snomed",
+                    "display": "Breast reconstruction"
+                  }
                 }
               ],
-              "definition": "http://hl7.org/fhir/Procedure.code",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                  "valueBoolean": true
+                }
+              ]
+            },
+            {
+              "linkId": "procedurestatus3",
+              "text": "Was a breast reconstruction performed",
+              "type": "choice",
+              "definition": "http://hl7.org/fhir/Procedure#Procedure.status",
               "answerOption": [
                 {
                   "valueCoding": {
-                    "code": "yes",
-                    "system": "http://canshare.co.nz/CodeSystem/SP",
-                    "display": "Yes"
+                    "code": "completed",
+                    "system": "http://hl7.org/fhir/event-status",
+                    "display": "yes"
                   }
                 },
                 {
                   "valueCoding": {
-                    "code": "No",
-                    "system": "http://canshare.co.nz/CodeSystem/SP",
-                    "display": "No"
+                    "code": "not-done",
+                    "system": "http://hl7.org/fhir/event-status",
+                    "display": "no"
                   }
                 }
               ]

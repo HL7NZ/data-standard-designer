@@ -1,5 +1,5 @@
 Alias: $definitionExtraction = http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemExtractionContext
-
+Alias: $hidden = http://hl7.org/fhir/StructureDefinition/questionnaire-hidden
 
 //simple request
 Instance: SimpleRequest
@@ -60,43 +60,64 @@ Description: "A simple request for testing the POC"
 * item[=].item[=].item[=].answerOption[+].valueCoding = http://mycode#code2 "Resection"
 
 
+//---------------------------------
 //this is another procedure, with the item code as the procedure code and the answer being yes or no
 //the group
 * item[=].item[+].linkId = "procGroup2"
-* item[=].item[=].text = "Lymph Node biopsy"
+* item[=].item[=].text = "Lymph Node biopsy question. Uses boolean to create procedure"
 * item[=].item[=].type = #group
 * item[=].item[=].extension[0].url = $definitionExtraction
 * item[=].item[=].extension[0].valueCode = #Procedure
 
-// the question 
+//the code of the procedure
+
+//extHidden = "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden"
+
 * item[=].item[=].item[+].linkId = "procedurecode1"
+* item[=].item[=].item[=].text = "Lymph node biopsy code"
+* item[=].item[=].item[=].type = #choice
+//* item[=].item[=].item[=].code = http://mycode#code3 "Lymph node biopsy"    //the code for the resource
+* item[=].item[=].item[=].definition = "http://hl7.org/fhir/Procedure#Procedure.code"
+* item[=].item[=].item[=].initial[+].valueCoding = http://mycode#code3 "Lymph node biopsy"    //the code for the resource
+* item[=].item[=].item[=].answerOption[+].valueCoding = http://mycode#code3 "Lymph node biopsy"     //may not be needed, but will help the UI ATM
+* item[=].item[=].item[=].extension[0].url = $hidden
+* item[=].item[=].item[=].extension[0].valueBoolean = true
+
+// the status.
+* item[=].item[=].item[+].linkId = "procedurestatus1"
 * item[=].item[=].item[=].text = "Was a lymph node biopsy performed"
 * item[=].item[=].item[=].type = #boolean
-* item[=].item[=].item[=].code = http://mycode#code3 "Lymph node biopsy"    //the code for the resource
-* item[=].item[=].item[=].definition = "http://hl7.org/fhir/Procedure.code"
+//* item[=].item[=].item[=].code = http://mycode#code3 "Lymph node biopsy"    //the code for the resource
+* item[=].item[=].item[=].definition = "http://hl7.org/fhir/Procedure#Procedure.status"
 
-
+//--------------------------------------------------------- breast reconstruction
 
 //another using the the item code as the procedure.code but the answer is a coding
 * item[=].item[+].linkId = "procGroup3"
-* item[=].item[=].text = "Was a reconstruction done"
+* item[=].item[=].text = "Was a reconstruction done. uses coding as the answer"
 * item[=].item[=].type = #group
 * item[=].item[=].extension[0].url = $definitionExtraction
 * item[=].item[=].extension[0].valueCode = #Procedure
 
-// the question 
+// the question  - the code for breast reconstruction
 * item[=].item[=].item[+].linkId = "breast-reconstruction"
 * item[=].item[=].item[=].text = "Was a breast reconstruction performed"
 * item[=].item[=].item[=].type = #choice
-* item[=].item[=].item[=].code = http://mycode#code3 "Lymph node biopsy"    //the code for the resource
-* item[=].item[=].item[=].definition = "http://hl7.org/fhir/Procedure.code"
-* item[=].item[=].item[=].answerOption[+].valueCoding = http://canshare.co.nz/CodeSystem/SP#yes "Yes"
-* item[=].item[=].item[=].answerOption[+].valueCoding = http://canshare.co.nz/CodeSystem/SP#No "No"
+* item[=].item[=].item[=].definition = "http://hl7.org/fhir/Procedure#Procedure.code"
+* item[=].item[=].item[=].initial[+].valueCoding = http://snomed#recon "Breast reconstruction"
+//* item[=].item[=].item[=].answerOption[+].valueCoding = http://snomed#recon
+
+* item[=].item[=].item[=].extension[0].url = $hidden
+* item[=].item[=].item[=].extension[0].valueBoolean = true
 
 
-
-
-
+// the status.
+* item[=].item[=].item[+].linkId = "procedurestatus3"
+* item[=].item[=].item[=].text = "Was a breast reconstruction performed"
+* item[=].item[=].item[=].type = #choice
+* item[=].item[=].item[=].definition = "http://hl7.org/fhir/Procedure#Procedure.status"
+* item[=].item[=].item[=].answerOption[+].valueCoding = http://hl7.org/fhir/event-status#completed "yes"
+* item[=].item[=].item[=].answerOption[+].valueCoding = http://hl7.org/fhir/event-status#not-done "no"
 
 
 /*
@@ -108,6 +129,8 @@ Description: "A simple request for testing the POC"
 * item[=].item[=].code.code = #location
 
 */
+
+// -------------------------------
 
 * item[+].linkId = "findings"
 * item[=].text = "Findings"
