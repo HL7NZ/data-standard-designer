@@ -51,13 +51,14 @@ Description: "A simple request for testing the POC"
 
 
 * item[=].item[=].item[+].linkId = "procedurecode"
-* item[=].item[=].item[=].text = "Procedure"
+//* item[=].item[=].item[=].text = "Procedure"
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].definition = "http://hl7.org/fhir/Procedure#Procedure.code"
 
 //the answers have the code for the procedure
 * item[=].item[=].item[=].answerOption[+].valueCoding = http://mycode#code1 "Biopsy"
 * item[=].item[=].item[=].answerOption[+].valueCoding = http://mycode#code2 "Resection"
+
 
 
 //---------------------------------
@@ -101,11 +102,11 @@ Description: "A simple request for testing the POC"
 
 // the question  - the code for breast reconstruction
 * item[=].item[=].item[+].linkId = "breast-reconstruction"
-* item[=].item[=].item[=].text = "Was a breast reconstruction performed"
+//* item[=].item[=].item[=].text = "Was a breast reconstruction performed"
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].definition = "http://hl7.org/fhir/Procedure#Procedure.code"
 * item[=].item[=].item[=].initial[+].valueCoding = http://snomed#recon "Breast reconstruction"
-//* item[=].item[=].item[=].answerOption[+].valueCoding = http://snomed#recon
+* item[=].item[=].item[=].answerOption[+].valueCoding = http://snomed#recon
 
 * item[=].item[=].item[=].extension[0].url = $hidden
 * item[=].item[=].item[=].extension[0].valueBoolean = true
@@ -113,7 +114,7 @@ Description: "A simple request for testing the POC"
 
 // the status.
 * item[=].item[=].item[+].linkId = "procedurestatus3"
-* item[=].item[=].item[=].text = "Was a breast reconstruction performed"
+//* item[=].item[=].item[=].text = "Was a breast reconstruction performed"
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].definition = "http://hl7.org/fhir/Procedure#Procedure.status"
 * item[=].item[=].item[=].answerOption[+].valueCoding = http://hl7.org/fhir/event-status#completed "yes"

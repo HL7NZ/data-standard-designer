@@ -64,7 +64,6 @@
           "item": [
             {
               "linkId": "procedurecode",
-              "text": "Procedure",
               "type": "choice",
               "definition": "http://hl7.org/fhir/Procedure#Procedure.code",
               "answerOption": [
@@ -148,7 +147,6 @@
           "item": [
             {
               "linkId": "breast-reconstruction",
-              "text": "Was a breast reconstruction performed",
               "type": "choice",
               "definition": "http://hl7.org/fhir/Procedure#Procedure.code",
               "initial": [
@@ -157,6 +155,14 @@
                     "code": "recon",
                     "system": "http://snomed",
                     "display": "Breast reconstruction"
+                  }
+                }
+              ],
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "recon",
+                    "system": "http://snomed"
                   }
                 }
               ],
@@ -169,7 +175,6 @@
             },
             {
               "linkId": "procedurestatus3",
-              "text": "Was a breast reconstruction performed",
               "type": "choice",
               "definition": "http://hl7.org/fhir/Procedure#Procedure.status",
               "answerOption": [
