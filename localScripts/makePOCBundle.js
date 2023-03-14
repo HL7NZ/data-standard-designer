@@ -16,7 +16,7 @@ let serverUrl = 'http://localhost:8080/fhir'
 
 let arFiles = fs.readdirSync(folder);
 arFiles.forEach(function(name){
-    if (name.indexOf("Questionnaire-") > -1 || name.indexOf("Patient-") > -1) {
+    if (name.indexOf("Questionnaire-") > -1 || name.indexOf("Patient-") > -1 || name.indexOf("SearchParameter-") > -1) {
         let fullFileName = folder + name;
 
        // console.log(fullFileName)

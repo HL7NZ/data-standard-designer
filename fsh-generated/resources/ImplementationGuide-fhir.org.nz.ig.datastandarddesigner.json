@@ -242,6 +242,14 @@
       },
       {
         "reference": {
+          "reference": "SearchParameter/spSupportingInfoQr"
+        },
+        "name": "spSupportingInfoQr",
+        "description": "A search request that returns the supportinginfo QR associated with a SR",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
           "reference": "Questionnaire/QLungCancer"
         },
         "name": "QLungCancer",

@@ -114,7 +114,7 @@ Description: "A simple request for testing the POC"
 
 // the status.
 * item[=].item[=].item[+].linkId = "procedurestatus3"
-//* item[=].item[=].item[=].text = "Was a breast reconstruction performed"
+* item[=].item[=].item[=].text = "Was a breast reconstruction performed"
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].definition = "http://hl7.org/fhir/Procedure#Procedure.status"
 * item[=].item[=].item[=].answerOption[+].valueCoding = http://hl7.org/fhir/event-status#completed "yes"

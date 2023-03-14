@@ -175,6 +175,7 @@
             },
             {
               "linkId": "procedurestatus3",
+              "text": "Was a breast reconstruction performed",
               "type": "choice",
               "definition": "http://hl7.org/fhir/Procedure#Procedure.status",
               "answerOption": [
