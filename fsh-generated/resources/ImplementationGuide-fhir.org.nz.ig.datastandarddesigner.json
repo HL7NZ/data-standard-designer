@@ -202,6 +202,14 @@
       },
       {
         "reference": {
+          "reference": "Questionnaire/SimpleGeneral"
+        },
+        "name": "SimpleGeneral",
+        "description": "A simple general form for testing the POC",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
           "reference": "Questionnaire/SimpleReport"
         },
         "name": "SimpleReport",
