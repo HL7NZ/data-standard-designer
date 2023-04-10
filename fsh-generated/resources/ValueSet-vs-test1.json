@@ -1,0 +1,54 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "Vs_test1",
+  "id": "vs-test1",
+  "title": "Test 1 for usecontext lookup",
+  "description": "Test 1 for usecontext lookup - cT for bowel concer",
+  "version": "0.1.0",
+  "url": "http://fhir.org.nz/ig/datastandarddesigner/ValueSet/vs-test1",
+  "useContext": [
+    {
+      "code": {
+        "code": "valueset-use",
+        "system": "http://canshare.co.nz/CodeSystem/vs-lookup-codes"
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "ct",
+            "system": "http://snomed.info/sct"
+          }
+        ]
+      }
+    },
+    {
+      "code": {
+        "code": "valueset-tumour-type",
+        "system": "http://canshare.co.nz/CodeSystem/vs-lookup-codes"
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "bowel-cancer",
+            "system": "http://snomed.info/sct"
+          }
+        ]
+      }
+    }
+  ],
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "filter": [
+          {
+            "property": "concept",
+            "op": "is-a",
+            "value": "363787002"
+          }
+        ]
+      }
+    ]
+  }
+}

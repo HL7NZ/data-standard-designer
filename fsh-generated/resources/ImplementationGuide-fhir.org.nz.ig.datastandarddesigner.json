@@ -170,6 +170,22 @@
       },
       {
         "reference": {
+          "reference": "ValueSet/vs-test1"
+        },
+        "name": "Test 1 for usecontext lookup",
+        "description": "Test 1 for usecontext lookup - cT for bowel concer",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/vs-test2"
+        },
+        "name": "Test 2 for usecontext lookup",
+        "description": "Test 2 for usecontext lookup - cT for breast",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "CodeSystem/reviewer-comment-type"
         },
         "name": "ReviewerComments",

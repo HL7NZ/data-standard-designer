@@ -1,0 +1,54 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "Vs_test2",
+  "id": "vs-test2",
+  "title": "Test 2 for usecontext lookup",
+  "description": "Test 2 for usecontext lookup - cT for breast",
+  "version": "0.1.0",
+  "url": "http://fhir.org.nz/ig/datastandarddesigner/ValueSet/vs-test2",
+  "useContext": [
+    {
+      "code": {
+        "code": "valueset-use",
+        "system": "http://canshare.co.nz/CodeSystem/vs-lookup-codes"
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "ct",
+            "system": "http://snomed.info/sct"
+          }
+        ]
+      }
+    },
+    {
+      "code": {
+        "code": "valueset-tumour-type",
+        "system": "http://canshare.co.nz/CodeSystem/vs-lookup-codes"
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "breast-cancer",
+            "system": "http://snomed.info/sct"
+          }
+        ]
+      }
+    }
+  ],
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "filter": [
+          {
+            "property": "concept",
+            "op": "is-a",
+            "value": "363787002"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -22,6 +22,7 @@ echo "Making terminology summary"   # will copy into IG input folder
 
 echo "Not doing anything else right now"
 
+# re-enable later
 cd localScripts
 ./makePOCBundle.js
 
